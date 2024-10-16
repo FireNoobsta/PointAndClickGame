@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tjtgf8ple4xl"]
+[gd_scene load_steps=18 format=3 uid="uid://tjtgf8ple4xl"]
 
 [ext_resource type="PackedScene" uid="uid://c0fgveduh7l81" path="res://Assets/Scenes/Screen_1.tscn" id="2_3fk57"]
 [ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screen_2.tscn" id="2_sbpq0"]
@@ -16,13 +16,20 @@
 [ext_resource type="PackedScene" uid="uid://7xnj6rddjka0" path="res://Assets/Scenes/Screen_14.tscn" id="14_kg4vh"]
 [ext_resource type="PackedScene" uid="uid://dvm4mg710y4fj" path="res://Assets/Scenes/Screen_15.tscn" id="15_j1075"]
 [ext_resource type="PackedScene" uid="uid://oqqjfjeubw7p" path="res://Assets/Scenes/Screen_16.tscn" id="16_btmca"]
+[ext_resource type="PackedScene" uid="uid://by0b0eltxx3vu" path="res://Assets/Scenes/FlashLightOccluder.tscn" id="17_4t7oy"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Screen_1" parent="." instance=ExtResource("2_3fk57")]
 
+[node name="TextureButton" parent="Screen_1" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../Screen_2/Camera2D")
+
 [node name="Screen_2" parent="." instance=ExtResource("2_sbpq0")]
 position = Vector2(1459, 1)
+
+[node name="TextureButton" parent="Screen_2" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../Screen_1/Camera2D")
 
 [node name="Screen_3" parent="." instance=ExtResource("3_w0id4")]
 position = Vector2(3011, -3)
@@ -65,3 +72,10 @@ position = Vector2(3069, 2385)
 
 [node name="Screen_16" parent="." instance=ExtResource("16_btmca")]
 position = Vector2(4543, 2355)
+
+[node name="FlashLightOccluder" parent="." instance=ExtResource("17_4t7oy")]
+modulate = Color(1, 1, 1, 0.972549)
+position = Vector2(-2656, -1156)
+
+[editable path="Screen_1"]
+[editable path="Screen_2"]
