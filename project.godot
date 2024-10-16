@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="ScreamJam2024"
+run/main_scene="res://Assets/Scenes/Game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [editor]
 

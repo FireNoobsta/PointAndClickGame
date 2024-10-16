@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvm4mg710y4fj"]
+
+[ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_4ul1k"]
+[ext_resource type="PackedScene" uid="uid://cwaq2d6y36e4m" path="res://Assets/Scenes/ChangeCameraButton.tscn" id="2_lj1dk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
+font_size = 32
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Screen_15" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 5
+position = Vector2(0, -5.96046e-08)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4.76471, 4.76471)
+texture = ExtResource("1_4ul1k")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -52.0
+offset_top = -319.0
+offset_right = 50.0
+offset_bottom = -274.0
+text = "Tile #15"
+label_settings = SubResource("LabelSettings_8n4rf")
+
+[node name="TextureButton" parent="." instance=ExtResource("2_lj1dk")]
+offset_left = -501.0
+offset_top = 87.0
+offset_right = -451.0
+offset_bottom = 137.0
+flip_h = false

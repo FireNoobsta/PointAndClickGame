@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwaq2d6y36e4m"]
+
+[ext_resource type="Texture2D" uid="uid://c4yxkggu5gv0d" path="res://Assets/Placeholders/arrowLeft.png" id="1_er34y"]
+[ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="2_ipgq8"]
+
+[node name="TextureButton" type="TextureButton" node_paths=PackedStringArray("DestinationCamera")]
+offset_left = 450.0
+offset_top = 35.0
+offset_right = 500.0
+offset_bottom = 85.0
+scale = Vector2(1.78089, 1.78089)
+texture_normal = ExtResource("1_er34y")
+flip_h = true
+script = ExtResource("2_ipgq8")
+DestinationCamera = NodePath("")
