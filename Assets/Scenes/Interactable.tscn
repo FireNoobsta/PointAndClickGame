@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://7o43yuevclbp"]
+[gd_scene load_steps=2 format=3 uid="uid://7o43yuevclbp"]
 
 [ext_resource type="Texture2D" uid="uid://bqfsm3ml8mjo7" path="res://Assets/Placeholders/Backpack.png" id="1_kq0h7"]
-[ext_resource type="Script" path="res://Assets/Scripts/Interactable.gd" id="2_rw1h4"]
 
 [node name="Interactable" type="Node2D"]
 
@@ -10,4 +9,3 @@ texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_kq0h7")
-script = ExtResource("2_rw1h4")
