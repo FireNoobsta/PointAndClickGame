@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7o43yuevclbp"]
+
+[ext_resource type="Texture2D" uid="uid://bqfsm3ml8mjo7" path="res://Assets/Placeholders/Backpack.png" id="1_kq0h7"]
+
+[node name="Interactable" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_kq0h7")

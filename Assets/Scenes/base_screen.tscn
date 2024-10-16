@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvjejahrr05ro"]
+[gd_scene load_steps=5 format=3 uid="uid://bvjejahrr05ro"]
 
 [ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_gt6o7"]
 [ext_resource type="PackedScene" uid="uid://cwaq2d6y36e4m" path="res://Assets/Scenes/ChangeCameraButton.tscn" id="2_vin6u"]
+[ext_resource type="PackedScene" uid="uid://7o43yuevclbp" path="res://Assets/Scenes/Interactable.tscn" id="3_qlfbi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -28,3 +29,5 @@ text = "Tile #X"
 label_settings = SubResource("LabelSettings_8n4rf")
 
 [node name="TextureButton" parent="." instance=ExtResource("2_vin6u")]
+
+[node name="Interactable" parent="." instance=ExtResource("3_qlfbi")]

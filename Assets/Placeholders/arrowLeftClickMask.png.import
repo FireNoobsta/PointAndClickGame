@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://7k8r1cykcmw5"
+path="res://.godot/imported/arrowLeftClickMask.png-60434e03558602e68e952dc0ecc8e4b2.res"
+
+[deps]
+
+source_file="res://Assets/Placeholders/arrowLeftClickMask.png"
+dest_files=["res://.godot/imported/arrowLeftClickMask.png-60434e03558602e68e952dc0ecc8e4b2.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
