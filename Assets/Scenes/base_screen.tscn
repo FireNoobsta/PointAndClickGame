@@ -31,3 +31,4 @@ label_settings = SubResource("LabelSettings_8n4rf")
 [node name="TextureButton" parent="." instance=ExtResource("2_vin6u")]
 
 [node name="Interactable" parent="." instance=ExtResource("3_qlfbi")]
+position = Vector2(233, -58)

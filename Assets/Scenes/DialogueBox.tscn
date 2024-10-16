@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://clmqwhmoga3p7"]
+
+[node name="DialogueBox" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
