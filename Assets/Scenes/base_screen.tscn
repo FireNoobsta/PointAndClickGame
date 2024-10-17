@@ -29,6 +29,22 @@ text = "Tile #X"
 label_settings = SubResource("LabelSettings_8n4rf")
 
 [node name="TextureButton" parent="." instance=ExtResource("2_vin6u")]
+offset_left = 440.0
+offset_top = 107.0
+offset_right = 490.0
+offset_bottom = 157.0
 
 [node name="Interactable" parent="." instance=ExtResource("3_qlfbi")]
-position = Vector2(233, -58)
+position = Vector2(258, -86)
+
+[node name="TextureButton" parent="Interactable" index="0"]
+DialogueText = ["You got the thing!!!", "Wahoo"]
+
+[node name="Interactable2" parent="." instance=ExtResource("3_qlfbi")]
+position = Vector2(-329, -228)
+
+[node name="TextureButton" parent="Interactable2" index="0"]
+DialogueText = ["Something else", "oohaw"]
+
+[editable path="Interactable"]
+[editable path="Interactable2"]
