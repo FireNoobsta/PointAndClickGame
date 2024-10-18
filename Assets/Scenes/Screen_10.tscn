@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bishvv8l4l2ru"]
+[gd_scene load_steps=6 format=3 uid="uid://bishvv8l4l2ru"]
 
 [ext_resource type="Texture2D" uid="uid://b1a4vund6h2ix" path="res://Assets/Placeholders/road.png" id="1_s852w"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_7i8gb"]
 [ext_resource type="PackedScene" uid="uid://dqsujjtee2bi8" path="res://Assets/Scenes/CarObject.tscn" id="3_n7kiu"]
 [ext_resource type="PackedScene" uid="uid://dmoqp6yjkuyw2" path="res://Assets/Scenes/PlayerInventory.tscn" id="4_07gq6"]
-[ext_resource type="PackedScene" uid="uid://7o43yuevclbp" path="res://Assets/Scenes/Interactable.tscn" id="5_32jmt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -40,19 +39,9 @@ position = Vector2(-585, -240)
 offset_right = 481.0
 offset_bottom = 214.0
 
-[node name="Interactable2" parent="." instance=ExtResource("5_32jmt")]
-position = Vector2(274, -155)
-
-[node name="TextureButton" parent="Interactable2" index="0"]
-DialogueText = Array[String](["You got the [color=Yellow]keys[/color] from the backpack!"])
-
 [node name="PlayerInventory" parent="." instance=ExtResource("4_07gq6")]
 unique_name_in_owner = true
 position = Vector2(-898, -1311)
-itemButtonEntries = {
-"Key": NodePath("../../Interactable2/TextureButton")
-}
 
 [editable path="CarObject"]
 [editable path="CarObject/Interactable"]
-[editable path="Interactable2"]

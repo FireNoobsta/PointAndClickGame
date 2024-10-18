@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnbd87ct6vj5b"]
+[gd_scene load_steps=6 format=3 uid="uid://bnbd87ct6vj5b"]
 
 [ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_2n4c5"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_nr134"]
+[ext_resource type="PackedScene" uid="uid://7o43yuevclbp" path="res://Assets/Scenes/Interactable.tscn" id="3_05utv"]
+[ext_resource type="Texture2D" uid="uid://ddusrcnsgik85" path="res://Assets/Placeholders/tire.png" id="4_esgan"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -31,3 +33,12 @@ label_settings = SubResource("LabelSettings_8n4rf")
 [node name="The Buttons" parent="." instance=ExtResource("2_nr134")]
 up = false
 right = false
+
+[node name="Interactable" parent="." instance=ExtResource("3_05utv")]
+position = Vector2(422, -225)
+
+[node name="TextureButton" parent="Interactable" index="0"]
+texture_normal = ExtResource("4_esgan")
+DialogueText = Array[String](["You got the [color=yellow]tire[/color]!"])
+
+[editable path="Interactable"]

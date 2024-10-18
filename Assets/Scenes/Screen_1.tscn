@@ -39,6 +39,6 @@ position = Vector2(400, -193)
 
 [node name="TextureButton" parent="Interactable" index="0"]
 texture_normal = ExtResource("4_fxhcl")
-DialogueText = Array[String](["You got the [color=yellow]gas[/color]"])
+DialogueText = Array[String](["You got the [color=yellow]gas[/color]!"])
 
 [editable path="Interactable"]
