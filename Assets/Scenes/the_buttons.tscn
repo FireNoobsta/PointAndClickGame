@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://drbsf16nu7rwg"]
+
+[ext_resource type="PackedScene" uid="uid://cwaq2d6y36e4m" path="res://Assets/Scenes/ChangeCameraButton.tscn" id="1_7g0wv"]
+[ext_resource type="Script" path="res://Assets/Scripts/the_buttons.gd" id="1_ki8po"]
+
+[node name="The Buttons" type="Node2D"]
+script = ExtResource("1_ki8po")
+
+[node name="LeftButton" parent="." instance=ExtResource("1_7g0wv")]
+offset_left = -455.0
+offset_top = 118.0
+offset_right = -405.0
+offset_bottom = 168.0
+flip_h = false
+
+[node name="UpButton" parent="." instance=ExtResource("1_7g0wv")]
+offset_left = 45.0448
+offset_top = 113.0
+offset_right = 95.0448
+offset_bottom = 163.0
+rotation = 1.5708
+flip_h = false
+
+[node name="RightButton" parent="." instance=ExtResource("1_7g0wv")]
+offset_left = 368.0
+offset_top = 120.0
+offset_right = 418.0
+offset_bottom = 170.0
+
+[node name="DownButton" parent="." instance=ExtResource("1_7g0wv")]
+offset_left = 45.0448
+offset_top = 185.0
+offset_right = 95.0448
+offset_bottom = 235.0
+rotation = 1.5708

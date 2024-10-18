@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://chcjpwinltbta"]
 
 [ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_mxavx"]
-[ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://the_buttons.tscn" id="2_bsjku"]
+[ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_bsjku"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -28,3 +28,4 @@ text = "Tile #12"
 label_settings = SubResource("LabelSettings_8n4rf")
 
 [node name="The Buttons" parent="." instance=ExtResource("2_bsjku")]
+right = false

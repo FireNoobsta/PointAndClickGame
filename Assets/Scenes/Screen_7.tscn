@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy13bhgw10q87"]
 
 [ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_v81m2"]
-[ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://the_buttons.tscn" id="2_j0ltq"]
+[ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_j0ltq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32

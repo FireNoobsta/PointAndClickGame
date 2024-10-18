@@ -23,6 +23,18 @@
 [node name="Screen_10" parent="." instance=ExtResource("10_hpdqs")]
 position = Vector2(1483, 1551)
 
+[node name="LeftButton" parent="Screen_10/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_9/Camera2D")
+
+[node name="UpButton" parent="Screen_10/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_6/Camera2D")
+
+[node name="RightButton" parent="Screen_10/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_11/Camera2D")
+
+[node name="DownButton" parent="Screen_10/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_14/Camera2D")
+
 [node name="PlayerInventory" parent="Screen_10" index="6"]
 itemButtonEntries = {
 "Key": NodePath("../Interactable2/TextureButton")
@@ -30,55 +42,217 @@ itemButtonEntries = {
 
 [node name="Screen_1" parent="." instance=ExtResource("2_3fk57")]
 
+[node name="RightButton" parent="Screen_1/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_2/Camera2D")
+
+[node name="DownButton" parent="Screen_1/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_5/Camera2D")
+
 [node name="Screen_2" parent="." instance=ExtResource("2_sbpq0")]
 position = Vector2(1459, 1)
+
+[node name="LeftButton" parent="Screen_2/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_1/Camera2D")
+
+[node name="RightButton" parent="Screen_2/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_3/Camera2D")
+
+[node name="DownButton" parent="Screen_2/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_6/Camera2D")
 
 [node name="Screen_3" parent="." instance=ExtResource("3_w0id4")]
 position = Vector2(3011, -3)
 
+[node name="LeftButton" parent="Screen_3/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_2/Camera2D")
+
+[node name="RightButton" parent="Screen_3/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_4/Camera2D")
+
+[node name="DownButton" parent="Screen_3/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_7/Camera2D")
+
 [node name="Screen_4" parent="." instance=ExtResource("4_5u7a3")]
 position = Vector2(4590, -14)
+
+[node name="LeftButton" parent="Screen_4/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_3/Camera2D")
+
+[node name="DownButton" parent="Screen_4/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_8/Camera2D")
 
 [node name="Screen_5" parent="." instance=ExtResource("5_cuak0")]
 position = Vector2(2, 730)
 
+[node name="UpButton" parent="Screen_5/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_1/Camera2D")
+
+[node name="RightButton" parent="Screen_5/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_6/Camera2D")
+
+[node name="DownButton" parent="Screen_5/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_9/Camera2D")
+
 [node name="Screen_6" parent="." instance=ExtResource("6_2y53t")]
 position = Vector2(1465, 748)
+
+[node name="LeftButton" parent="Screen_6/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_5/Camera2D")
+
+[node name="UpButton" parent="Screen_6/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_2/Camera2D")
+
+[node name="RightButton" parent="Screen_6/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_7/Camera2D")
+
+[node name="DownButton" parent="Screen_6/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_10/Camera2D")
 
 [node name="Screen_7" parent="." instance=ExtResource("7_ahdpt")]
 position = Vector2(3026, 767)
 
+[node name="LeftButton" parent="Screen_7/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_6/Camera2D")
+
+[node name="UpButton" parent="Screen_7/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_3/Camera2D")
+
+[node name="RightButton" parent="Screen_7/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_8/Camera2D")
+
+[node name="DownButton" parent="Screen_7/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_11/Camera2D")
+
 [node name="Screen_8" parent="." instance=ExtResource("8_6w8ps")]
 position = Vector2(4564, 767)
+
+[node name="LeftButton" parent="Screen_8/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_7/Camera2D")
+
+[node name="UpButton" parent="Screen_8/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_4/Camera2D")
+
+[node name="DownButton" parent="Screen_8/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_12/Camera2D")
 
 [node name="Screen_9" parent="." instance=ExtResource("9_y5m01")]
 position = Vector2(-13, 1543)
 
+[node name="UpButton" parent="Screen_9/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_5/Camera2D")
+
+[node name="RightButton" parent="Screen_9/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_10/Camera2D")
+
+[node name="DownButton" parent="Screen_9/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_13/Camera2D")
+
 [node name="Screen_11" parent="." instance=ExtResource("11_3ttlc")]
 position = Vector2(3075, 1564)
+
+[node name="LeftButton" parent="Screen_11/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_10/Camera2D")
+
+[node name="UpButton" parent="Screen_11/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_7/Camera2D")
+
+[node name="RightButton" parent="Screen_11/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_12/Camera2D")
+
+[node name="DownButton" parent="Screen_11/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_15/Camera2D")
 
 [node name="Screen_12" parent="." instance=ExtResource("12_2h6ax")]
 position = Vector2(4555, 1570)
 
+[node name="LeftButton" parent="Screen_12/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_11/Camera2D")
+
+[node name="UpButton" parent="Screen_12/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_8/Camera2D")
+
+[node name="DownButton" parent="Screen_12/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_16/Camera2D")
+
 [node name="Screen_13" parent="." instance=ExtResource("13_ka1bd")]
 position = Vector2(-36, 2367)
+
+[node name="UpButton" parent="Screen_13/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_9/Camera2D")
+
+[node name="RightButton" parent="Screen_13/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_14/Camera2D")
 
 [node name="Screen_14" parent="." instance=ExtResource("14_kg4vh")]
 position = Vector2(1480, 2361)
 
+[node name="LeftButton" parent="Screen_14/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_13/Camera2D")
+
+[node name="UpButton" parent="Screen_14/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_10/Camera2D")
+
+[node name="RightButton" parent="Screen_14/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_15/Camera2D")
+
 [node name="Screen_15" parent="." instance=ExtResource("15_j1075")]
 position = Vector2(3069, 2385)
 
+[node name="LeftButton" parent="Screen_15/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_14/Camera2D")
+
+[node name="UpButton" parent="Screen_15/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_11/Camera2D")
+
+[node name="RightButton" parent="Screen_15/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_16/Camera2D")
+
 [node name="Screen_16" parent="." instance=ExtResource("16_btmca")]
 position = Vector2(4543, 2355)
+
+[node name="LeftButton" parent="Screen_16/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_15/Camera2D")
+
+[node name="UpButton" parent="Screen_16/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_12/Camera2D")
 
 [node name="FlashLightOccluder" parent="." instance=ExtResource("17_4t7oy")]
 modulate = Color(1, 1, 1, 0.972549)
 position = Vector2(-2656, -1156)
 
 [editable path="Screen_10"]
+[editable path="Screen_10/The Buttons"]
 [editable path="Screen_10/CarObject"]
 [editable path="Screen_10/CarObject/Interactable"]
 [editable path="Screen_10/Interactable2"]
 [editable path="Screen_1"]
+[editable path="Screen_1/The Buttons"]
+[editable path="Screen_1/Interactable"]
 [editable path="Screen_2"]
+[editable path="Screen_2/The Buttons"]
+[editable path="Screen_3"]
+[editable path="Screen_3/The Buttons"]
+[editable path="Screen_4"]
+[editable path="Screen_4/The Buttons"]
+[editable path="Screen_5"]
+[editable path="Screen_5/The Buttons"]
+[editable path="Screen_6"]
+[editable path="Screen_6/The Buttons"]
+[editable path="Screen_7"]
+[editable path="Screen_7/The Buttons"]
+[editable path="Screen_8"]
+[editable path="Screen_8/The Buttons"]
+[editable path="Screen_9"]
+[editable path="Screen_9/The Buttons"]
+[editable path="Screen_11"]
+[editable path="Screen_11/The Buttons"]
+[editable path="Screen_12"]
+[editable path="Screen_12/The Buttons"]
+[editable path="Screen_13"]
+[editable path="Screen_13/The Buttons"]
+[editable path="Screen_14"]
+[editable path="Screen_14/The Buttons"]
+[editable path="Screen_15"]
+[editable path="Screen_15/The Buttons"]
+[editable path="Screen_16"]
+[editable path="Screen_16/The Buttons"]
