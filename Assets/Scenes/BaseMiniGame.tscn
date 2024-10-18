@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://b570g85md0jix"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/DraggableRigidBody.gd" id="1_1ho0p"]
+[ext_resource type="Texture2D" uid="uid://cwo303xrst4dc" path="res://Assets/Placeholders/latchHook.png" id="1_ptw8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btedf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_105av"]
+size = Vector2(19, 19)
+
+[node name="BaseMiniGame" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(165, -144)
+mass = 0.001
+continuous_cd = 1
+script = ExtResource("1_1ho0p")
+maxForce = 100.0
+maxDistance = 5.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(-124, -17)
+scale = Vector2(7.1577, 7.1577)
+polygon = PackedVector2Array(20, 1, -2, 1, -2, -6, -15, -6, -15, 4, -11, 4, -11, -2, -6, -2, -6, 4, 20, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionPolygon2D"]
+texture_filter = 1
+texture = ExtResource("1_ptw8o")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D"]
+node_a = NodePath("..")
+node_b = NodePath("../../StaticBody2D2")
+
+[node name="TextureButton" type="TextureButton" parent="RigidBody2D"]
+offset_left = -238.0
+offset_top = -69.0
+offset_right = 26.0
+offset_bottom = 27.0
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(83, 124)
+mass = 0.001
+continuous_cd = 1
+script = ExtResource("1_1ho0p")
+maxForce = 100.0
+maxDistance = 5.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D2"]
+position = Vector2(-124, -17)
+scale = Vector2(7.1577, 7.1577)
+polygon = PackedVector2Array(20, 1, -2, 1, -2, -6, -15, -6, -15, 4, -11, 4, -11, -2, -6, -2, -6, 4, 20, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2/CollisionPolygon2D"]
+texture_filter = 1
+texture = ExtResource("1_ptw8o")
+
+[node name="TextureButton" type="TextureButton" parent="RigidBody2D2"]
+offset_left = -238.0
+offset_top = -69.0
+offset_right = 26.0
+offset_bottom = 27.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-30, -166)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(10, 3)
+shape = SubResource("RectangleShape2D_btedf")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+texture = SubResource("PlaceholderTexture2D_105av")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-453, 250)
+scale = Vector2(47.6651, 5.17465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(10, 3)
+shape = SubResource("RectangleShape2D_btedf")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D"]
+texture = SubResource("PlaceholderTexture2D_105av")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(164, -145)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_btedf")

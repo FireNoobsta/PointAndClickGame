@@ -13,16 +13,16 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not up:
-		remove_child(upButton)
+		upButton.hide()
 		
 	if not right:
-		remove_child(rightButton)
+		rightButton.hide()
 		
 	if not down:
-		remove_child(downButton)
+		downButton.hide()
 		
 	if not left:
-		remove_child(leftButton)
+		leftButton.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
