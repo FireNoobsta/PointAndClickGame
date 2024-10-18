@@ -20,6 +20,14 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="Screen_10" parent="." instance=ExtResource("10_hpdqs")]
+position = Vector2(1483, 1551)
+
+[node name="PlayerInventory" parent="Screen_10" index="6"]
+itemButtonEntries = {
+"Key": NodePath("../Interactable2/TextureButton")
+}
+
 [node name="Screen_1" parent="." instance=ExtResource("2_3fk57")]
 
 [node name="Screen_2" parent="." instance=ExtResource("2_sbpq0")]
@@ -46,9 +54,6 @@ position = Vector2(4564, 767)
 [node name="Screen_9" parent="." instance=ExtResource("9_y5m01")]
 position = Vector2(-13, 1543)
 
-[node name="Screen_10" parent="." instance=ExtResource("10_hpdqs")]
-position = Vector2(1483, 1551)
-
 [node name="Screen_11" parent="." instance=ExtResource("11_3ttlc")]
 position = Vector2(3075, 1564)
 
@@ -71,5 +76,9 @@ position = Vector2(4543, 2355)
 modulate = Color(1, 1, 1, 0.972549)
 position = Vector2(-2656, -1156)
 
+[editable path="Screen_10"]
+[editable path="Screen_10/CarObject"]
+[editable path="Screen_10/CarObject/Interactable"]
+[editable path="Screen_10/Interactable2"]
 [editable path="Screen_1"]
 [editable path="Screen_2"]

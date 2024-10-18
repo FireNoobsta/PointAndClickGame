@@ -20,6 +20,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="DialogueBox" type="Node2D"]
+z_index = 10
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 5
@@ -34,12 +35,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_07868")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 10.0
 offset_right = 758.0
 offset_bottom = 172.0
 theme_override_fonts/normal_font = ExtResource("1_eknr5")
 theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
 fit_content = true
 

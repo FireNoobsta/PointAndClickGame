@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqsujjtee2bi8"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/car_object.gd" id="1_80hd3"]
+[ext_resource type="PackedScene" uid="uid://7o43yuevclbp" path="res://Assets/Scenes/Interactable.tscn" id="1_fpw84"]
+[ext_resource type="Texture2D" uid="uid://de4k7hmoofklm" path="res://Assets/Placeholders/car.png" id="2_7jwib"]
+
+[node name="CarObject" type="Node2D"]
+script = ExtResource("1_80hd3")
+
+[node name="Interactable" parent="." instance=ExtResource("1_fpw84")]
+
+[node name="TextureButton" parent="Interactable" index="0"]
+texture_normal = ExtResource("2_7jwib")
+DialogueText = Array[String](["The car is inoperable. You need:
+-Keys
+-Gas
+-Tire"])
+
+[editable path="Interactable"]

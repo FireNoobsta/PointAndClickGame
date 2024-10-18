@@ -10,4 +10,5 @@ texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_kq0h7")
+stretch_mode = 0
 script = ExtResource("2_rw1h4")

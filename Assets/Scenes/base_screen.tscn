@@ -38,13 +38,6 @@ offset_bottom = 157.0
 position = Vector2(258, -86)
 
 [node name="TextureButton" parent="Interactable" index="0"]
-DialogueText = ["You got the thing!!!", "Wahoo"]
-
-[node name="Interactable2" parent="." instance=ExtResource("3_qlfbi")]
-position = Vector2(-329, -228)
-
-[node name="TextureButton" parent="Interactable2" index="0"]
-DialogueText = ["Something else", "oohaw"]
+DialogueText = Array[String](["You got the thing!!!", "Wahoo"])
 
 [editable path="Interactable"]
-[editable path="Interactable2"]
