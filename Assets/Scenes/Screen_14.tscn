@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7xnj6rddjka0"]
+[gd_scene load_steps=11 format=3 uid="uid://7xnj6rddjka0"]
 
 [ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_hov22"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_dvye8"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_swn37"]
 [ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="6_tr5xq"]
 [ext_resource type="Script" path="res://Assets/Scripts/button_revealer.gd" id="7_0x56a"]
+[ext_resource type="Script" path="res://Assets/Scripts/ToggleVisibility.gd" id="7_u7il8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -46,7 +47,7 @@ position = Vector2(259, 901)
 scale = Vector2(9.78794, 9.70793)
 texture = SubResource("PlaceholderTexture2D_0fvul")
 
-[node name="Button2" type="Button" parent="." node_paths=PackedStringArray("DestinationCamera")]
+[node name="LeaveButton" type="Button" parent="." node_paths=PackedStringArray("DestinationCamera")]
 texture_filter = 1
 offset_left = -276.0
 offset_top = 790.0
@@ -61,11 +62,13 @@ DestinationCamera = NodePath("../Camera2D")
 [node name="BaseMiniGame" parent="." instance=ExtResource("3_qhhwh")]
 position = Vector2(33, 912)
 
-[node name="Gate" type="Sprite2D" parent="."]
+[node name="Gate" type="Sprite2D" parent="." node_paths=PackedStringArray("button")]
 texture_filter = 1
 position = Vector2(57, -197)
 scale = Vector2(3.68333, 3.68333)
 texture = ExtResource("4_snetx")
+script = ExtResource("7_u7il8")
+button = NodePath("../LeaveButton")
 
 [node name="Button" type="Button" parent="Gate" node_paths=PackedStringArray("DestinationCamera")]
 texture_filter = 1
@@ -84,7 +87,7 @@ DestinationCamera = NodePath("../../BaseMiniGame/Camera2D")
 [node name="ButtonRevealer" type="Node2D" parent="." node_paths=PackedStringArray("itemToReveal", "button")]
 script = ExtResource("7_0x56a")
 itemToReveal = NodePath("../The Buttons/UpButton")
-button = NodePath("../Button2")
+button = NodePath("../LeaveButton")
 
 [editable path="The Buttons"]
 [editable path="BaseMiniGame"]
