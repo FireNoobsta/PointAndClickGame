@@ -17,6 +17,8 @@ size = Vector2(40, 40)
 [node name="BaseMiniGame" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-40, -117)
+zoom = Vector2(1.415, 1.415)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(-27, -129)

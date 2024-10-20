@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://7xnj6rddjka0"]
+[gd_scene load_steps=10 format=3 uid="uid://7xnj6rddjka0"]
 
 [ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_hov22"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_dvye8"]
+[ext_resource type="PackedScene" uid="uid://b570g85md0jix" path="res://Assets/Scenes/BaseMiniGame.tscn" id="3_qhhwh"]
+[ext_resource type="Texture2D" uid="uid://df0fw0qijsldi" path="res://Assets/Placeholders/gate.png" id="4_snetx"]
+[ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_swn37"]
+[ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="6_tr5xq"]
+[ext_resource type="Script" path="res://Assets/Scripts/button_revealer.gd" id="7_0x56a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0fvul"]
+size = Vector2(48, 48)
 
 [node name="Screen_14" type="Node2D"]
 
@@ -28,4 +36,55 @@ text = "Tile #14"
 label_settings = SubResource("LabelSettings_8n4rf")
 
 [node name="The Buttons" parent="." instance=ExtResource("2_dvye8")]
+up = false
+right = false
 down = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0811248, 0.670091, 7.70092e-07, 1)
+position = Vector2(259, 901)
+scale = Vector2(9.78794, 9.70793)
+texture = SubResource("PlaceholderTexture2D_0fvul")
+
+[node name="Button2" type="Button" parent="." node_paths=PackedStringArray("DestinationCamera")]
+texture_filter = 1
+offset_left = -276.0
+offset_top = 790.0
+offset_right = -114.0
+offset_bottom = 907.0
+theme_override_fonts/font = ExtResource("4_swn37")
+text = "Leave
+"
+script = ExtResource("6_tr5xq")
+DestinationCamera = NodePath("../Camera2D")
+
+[node name="BaseMiniGame" parent="." instance=ExtResource("3_qhhwh")]
+position = Vector2(33, 912)
+
+[node name="Gate" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(57, -197)
+scale = Vector2(3.68333, 3.68333)
+texture = ExtResource("4_snetx")
+
+[node name="Button" type="Button" parent="Gate" node_paths=PackedStringArray("DestinationCamera")]
+texture_filter = 1
+offset_left = -50.2262
+offset_top = -20.362
+offset_right = 205.774
+offset_bottom = 165.638
+scale = Vector2(0.270403, 0.275682)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("4_swn37")
+text = "Open Gate"
+flat = true
+script = ExtResource("6_tr5xq")
+DestinationCamera = NodePath("../../BaseMiniGame/Camera2D")
+
+[node name="ButtonRevealer" type="Node2D" parent="." node_paths=PackedStringArray("itemToReveal", "button")]
+script = ExtResource("7_0x56a")
+itemToReveal = NodePath("../The Buttons/UpButton")
+button = NodePath("../Button2")
+
+[editable path="The Buttons"]
+[editable path="BaseMiniGame"]

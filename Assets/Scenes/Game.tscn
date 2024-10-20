@@ -20,27 +20,17 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Screen_10" parent="." instance=ExtResource("10_hpdqs")]
-position = Vector2(1483, 1551)
+[node name="Screen_13" parent="." instance=ExtResource("13_ka1bd")]
+position = Vector2(-36, 2367)
 
-[node name="LeftButton" parent="Screen_10/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+[node name="The Buttons" parent="Screen_13" index="3"]
+up = false
+
+[node name="UpButton" parent="Screen_13/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_9/Camera2D")
 
-[node name="UpButton" parent="Screen_10/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_6/Camera2D")
-
-[node name="RightButton" parent="Screen_10/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_11/Camera2D")
-
-[node name="DownButton" parent="Screen_10/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+[node name="RightButton" parent="Screen_13/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_14/Camera2D")
-
-[node name="PlayerInventory" parent="Screen_10" index="5"]
-itemButtonEntries = {
-"Gas": NodePath("../../Screen_1/Interactable/TextureButton"),
-"Key": NodePath("../../Screen_16/Interactable/TextureButton"),
-"Tire": NodePath("../../Screen_4/Interactable/TextureButton")
-}
 
 [node name="Screen_1" parent="." instance=ExtResource("2_3fk57")]
 
@@ -140,6 +130,9 @@ DestinationCamera = NodePath("../../../Screen_12/Camera2D")
 [node name="Screen_9" parent="." instance=ExtResource("9_y5m01")]
 position = Vector2(-13, 1543)
 
+[node name="The Buttons" parent="Screen_9" index="3"]
+down = false
+
 [node name="UpButton" parent="Screen_9/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_5/Camera2D")
 
@@ -148,6 +141,28 @@ DestinationCamera = NodePath("../../../Screen_10/Camera2D")
 
 [node name="DownButton" parent="Screen_9/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_13/Camera2D")
+
+[node name="Screen_10" parent="." instance=ExtResource("10_hpdqs")]
+position = Vector2(1483, 1551)
+
+[node name="LeftButton" parent="Screen_10/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_9/Camera2D")
+
+[node name="UpButton" parent="Screen_10/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_6/Camera2D")
+
+[node name="RightButton" parent="Screen_10/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_11/Camera2D")
+
+[node name="DownButton" parent="Screen_10/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_14/Camera2D")
+
+[node name="PlayerInventory" parent="Screen_10" index="5"]
+itemButtonEntries = {
+"Gas": NodePath("../../Screen_1/Interactable/TextureButton"),
+"Key": NodePath("../../Screen_16/Interactable/TextureButton"),
+"Tire": NodePath("../../Screen_4/Interactable/TextureButton")
+}
 
 [node name="Screen_11" parent="." instance=ExtResource("11_3ttlc")]
 position = Vector2(3075, 1564)
@@ -176,15 +191,6 @@ DestinationCamera = NodePath("../../../Screen_8/Camera2D")
 [node name="DownButton" parent="Screen_12/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_16/Camera2D")
 
-[node name="Screen_13" parent="." instance=ExtResource("13_ka1bd")]
-position = Vector2(-36, 2367)
-
-[node name="UpButton" parent="Screen_13/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_9/Camera2D")
-
-[node name="RightButton" parent="Screen_13/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_14/Camera2D")
-
 [node name="Screen_14" parent="." instance=ExtResource("14_kg4vh")]
 position = Vector2(1480, 2361)
 
@@ -199,6 +205,9 @@ DestinationCamera = NodePath("../../../Screen_15/Camera2D")
 
 [node name="Screen_15" parent="." instance=ExtResource("15_j1075")]
 position = Vector2(3069, 2385)
+
+[node name="The Buttons" parent="Screen_15" index="3"]
+left = false
 
 [node name="LeftButton" parent="Screen_15/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_14/Camera2D")
@@ -222,10 +231,8 @@ DestinationCamera = NodePath("../../../Screen_12/Camera2D")
 modulate = Color(1, 1, 1, 0.972549)
 position = Vector2(-2656, -1156)
 
-[editable path="Screen_10"]
-[editable path="Screen_10/The Buttons"]
-[editable path="Screen_10/CarObject"]
-[editable path="Screen_10/CarObject/Interactable"]
+[editable path="Screen_13"]
+[editable path="Screen_13/The Buttons"]
 [editable path="Screen_1"]
 [editable path="Screen_1/The Buttons"]
 [editable path="Screen_1/Interactable"]
@@ -246,14 +253,17 @@ position = Vector2(-2656, -1156)
 [editable path="Screen_8/The Buttons"]
 [editable path="Screen_9"]
 [editable path="Screen_9/The Buttons"]
+[editable path="Screen_10"]
+[editable path="Screen_10/The Buttons"]
+[editable path="Screen_10/CarObject"]
+[editable path="Screen_10/CarObject/Interactable"]
 [editable path="Screen_11"]
 [editable path="Screen_11/The Buttons"]
 [editable path="Screen_12"]
 [editable path="Screen_12/The Buttons"]
-[editable path="Screen_13"]
-[editable path="Screen_13/The Buttons"]
 [editable path="Screen_14"]
 [editable path="Screen_14/The Buttons"]
+[editable path="Screen_14/BaseMiniGame"]
 [editable path="Screen_15"]
 [editable path="Screen_15/The Buttons"]
 [editable path="Screen_16"]

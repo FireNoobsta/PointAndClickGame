@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@onready var button := $TextureButton
+@onready var button : TextureButton = $TextureButton
 var localForcePoint : Vector2
 var globalForcePoint : Vector2
 var forceDirection : Vector2
@@ -17,15 +17,23 @@ func _ready() -> void:
 	button.button_up.connect(OnButtonUp)
 
 func OnButtonDown():
-	print("button down")
+	#print("button down")
 	localForcePoint = self.to_local(get_global_mouse_position())
 	isDragging = true
 	
 func OnButtonUp():
-	print("button up")
+	#print("button up")
 	isDragging = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if isDragging:
+		self.modulate = Color.YELLOW
+	elif button.is_hovered():
+		self.modulate = Color(0.9, 0.9, 0.9)
+	else:
+		self.modulate = Color.WHITE
+
+
 func _physics_process(delta: float) -> void:
 	if isDragging:
 		mousePos = get_global_mouse_position()
@@ -35,6 +43,6 @@ func _physics_process(delta: float) -> void:
 		forceMagnitude = clamp(lerp(0.0, maxForce, distFromPoint / maxDistance), 0.0, maxForce)
 		forceToApply = forceDirection * forceMagnitude * delta
 		self.apply_force(forceToApply, (globalForcePoint - self.global_position))
-		print("applied force")
-		print("Magnitude: " + str(forceMagnitude) + "\n Force Vector: " + str(forceToApply))
+		#print("applied force")
+		#print("Magnitude: " + str(forceMagnitude) + "\n Force Vector: " + str(forceToApply))
 		

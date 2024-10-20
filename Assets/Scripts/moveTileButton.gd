@@ -1,4 +1,4 @@
-extends TextureButton
+extends BaseButton
 
 #export var destination := 
 #@onready var Camera := $"../Camera2D"
