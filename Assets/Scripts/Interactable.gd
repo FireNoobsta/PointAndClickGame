@@ -2,7 +2,7 @@ extends TextureButton
 
 @export_multiline var DialogueText : Array[String] = ["This is descriptive text"]
 const DIABOX := preload("res://Assets/Scenes/DialogueBox.tscn")
-var currTextIndex = 0
+#var currTextIndex = 0
 var spawnedBox
 
 signal closed_dialogue_box
@@ -27,16 +27,6 @@ func _process(_delta: float) -> void:
 func ClickedInteractable():
 	spawnedBox = DIABOX.instantiate()
 	add_child(spawnedBox)
-	spawnedBox.global_position = get_viewport().get_camera_2d().global_position
-	spawnedBox.get_node("Panel/RichTextLabel").text = DialogueText[currTextIndex]
-	currTextIndex += 1
-	spawnedBox.get_node("Button").pressed.connect(AdvanceDialogue)
-
-func AdvanceDialogue():
-	if currTextIndex >= DialogueText.size():
-		remove_child(spawnedBox)
-		currTextIndex = 0
-		closed_dialogue_box.emit()
-	else:
-		spawnedBox.get_node("Panel/RichTextLabel").text = DialogueText[currTextIndex]
-		currTextIndex += 1
+	spawnedBox.SetDialogue(DialogueText)
+	spawnedBox.StartDialogue()
+	spawnedBox.dialogue_closed.connect(closed_dialogue_box.emit)

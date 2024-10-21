@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://clmqwhmoga3p7"]
+[gd_scene load_steps=6 format=3 uid="uid://clmqwhmoga3p7"]
 
 [ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_eknr5"]
+[ext_resource type="Script" path="res://Assets/Scripts/dialogue_box.gd" id="1_ilyta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07868"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,19 +22,25 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="DialogueBox" type="Node2D"]
 z_index = 10
+script = ExtResource("1_ilyta")
 
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = 5
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -373.0
-offset_top = 120.0
-offset_right = 393.0
-offset_bottom = 304.0
+anchor_bottom = 1.0
+offset_left = -383.0
+offset_top = -234.26
+offset_right = 383.0
+offset_bottom = -50.26
 grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_07868")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 9.0
@@ -46,16 +53,16 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
 fit_content = true
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -636.0
-offset_top = -378.0
-offset_right = 648.0
-offset_bottom = 434.0
+offset_left = -648.0
+offset_top = -382.0
+offset_right = 636.0
+offset_bottom = 430.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/hover = SubResource("StyleBoxFlat_nxj40")
