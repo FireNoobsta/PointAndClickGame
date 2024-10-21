@@ -6,7 +6,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	plaInv.received_item.connect(PlayerGotItem)
-	UpdateInteractText()
+	get_node("Interactable/TextureButton").closed_dialogue_box.connect(UpdateInteractText)
 
 func PlayerGotItem(itemName):
 	if itemName in itemsNeeded:

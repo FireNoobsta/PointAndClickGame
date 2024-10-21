@@ -11,9 +11,6 @@ script = ExtResource("1_80hd3")
 
 [node name="TextureButton" parent="Interactable" index="0"]
 texture_normal = ExtResource("2_7jwib")
-DialogueText = Array[String](["The car is inoperable. You need:
--Keys
--Gas
--Tire"])
+DialogueText = Array[String](["Huh? The car won't start.", "Inspecting the car you find that the [color=yellow]gas[/color] has been siphoned.", "The [color=yellow]tires[/color] have been slashed.", "You go back in to retrieve your [color=yellow]keys[/color], but they're gone now too along with your backpack.", "You'll have to look around for help."])
 
 [editable path="Interactable"]

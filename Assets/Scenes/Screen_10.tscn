@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bishvv8l4l2ru"]
+[gd_scene load_steps=7 format=3 uid="uid://bishvv8l4l2ru"]
 
 [ext_resource type="Texture2D" uid="uid://b1a4vund6h2ix" path="res://Assets/Placeholders/road.png" id="1_s852w"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_7i8gb"]
 [ext_resource type="PackedScene" uid="uid://dqsujjtee2bi8" path="res://Assets/Scenes/CarObject.tscn" id="3_n7kiu"]
 [ext_resource type="PackedScene" uid="uid://dmoqp6yjkuyw2" path="res://Assets/Scenes/PlayerInventory.tscn" id="4_07gq6"]
+[ext_resource type="Script" path="res://Assets/Scripts/button_revealer.gd" id="5_blkl3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -31,6 +32,10 @@ text = "Tile #10"
 label_settings = SubResource("LabelSettings_8n4rf")
 
 [node name="The Buttons" parent="." instance=ExtResource("2_7i8gb")]
+up = false
+right = false
+down = false
+left = false
 
 [node name="CarObject" parent="." instance=ExtResource("3_n7kiu")]
 position = Vector2(-585, -240)
@@ -43,5 +48,11 @@ offset_bottom = 214.0
 unique_name_in_owner = true
 position = Vector2(-898, -1311)
 
+[node name="Revealer" type="Node2D" parent="." node_paths=PackedStringArray("itemsToReveal", "button")]
+script = ExtResource("5_blkl3")
+itemsToReveal = [NodePath("../The Buttons/LeftButton"), NodePath("../The Buttons/UpButton"), NodePath("../The Buttons/RightButton"), NodePath("../The Buttons/DownButton")]
+button = NodePath("../CarObject/Interactable/TextureButton")
+
+[editable path="The Buttons"]
 [editable path="CarObject"]
 [editable path="CarObject/Interactable"]

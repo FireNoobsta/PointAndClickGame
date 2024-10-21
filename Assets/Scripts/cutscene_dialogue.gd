@@ -3,6 +3,7 @@ extends Node2D
 @export_multiline var DialogueText : Array[String] = ["This is descriptive text"]
 @export var startOnReady := false
 @export var triggerButton : BaseButton
+@export var fireOnce := true
 
 const DIABOX := preload("res://Assets/Scenes/DialogueBox.tscn")
 var spawnedBox
@@ -21,4 +22,5 @@ func SpawnBox():
 	add_child(spawnedBox)
 	spawnedBox.SetDialogue(DialogueText)
 	spawnedBox.StartDialogue()
-	
+	if fireOnce:
+		spawnedBox.dialogue_closed.connect(queue_free)
