@@ -84,9 +84,9 @@ flat = true
 script = ExtResource("6_tr5xq")
 DestinationCamera = NodePath("../../BaseMiniGame/Camera2D")
 
-[node name="ButtonRevealer" type="Node2D" parent="." node_paths=PackedStringArray("itemToReveal", "button")]
+[node name="ButtonRevealer" type="Node2D" parent="." node_paths=PackedStringArray("itemsToReveal", "button")]
 script = ExtResource("7_0x56a")
-itemToReveal = NodePath("../The Buttons/UpButton")
+itemsToReveal = [NodePath("../The Buttons/UpButton")]
 button = NodePath("../LeaveButton")
 
 [editable path="The Buttons"]

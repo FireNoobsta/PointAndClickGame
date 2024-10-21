@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://tjtgf8ple4xl"]
+[gd_scene load_steps=20 format=3 uid="uid://tjtgf8ple4xl"]
 
 [ext_resource type="PackedScene" uid="uid://c0fgveduh7l81" path="res://Assets/Scenes/Screen_1.tscn" id="2_3fk57"]
 [ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screen_2.tscn" id="2_sbpq0"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://oqqjfjeubw7p" path="res://Assets/Scenes/Screen_16.tscn" id="16_btmca"]
 [ext_resource type="PackedScene" uid="uid://by0b0eltxx3vu" path="res://Assets/Scenes/FlashLightOccluder.tscn" id="17_4t7oy"]
 [ext_resource type="PackedScene" uid="uid://chjcqgfrr65om" path="res://Assets/Scenes/CutsceneDialogue.tscn" id="18_2sk01"]
+[ext_resource type="Script" path="res://Assets/Scripts/trigger_flashlight.gd" id="19_t0575"]
 
 [node name="Game" type="Node2D"]
 
@@ -229,10 +230,22 @@ DestinationCamera = NodePath("../../../Screen_15/Camera2D")
 DestinationCamera = NodePath("../../../Screen_12/Camera2D")
 
 [node name="FlashLightOccluder" parent="." instance=ExtResource("17_4t7oy")]
-modulate = Color(1, 1, 1, 0.972549)
+modulate = Color(1, 1, 1, 0)
 position = Vector2(-4986, -412)
 
 [node name="StartGameDialogue" parent="." instance=ExtResource("18_2sk01")]
+DialogueText = Array[String](["What a nice hike! But it's getting dark. Time to head back to your car."])
+startOnReady = true
+
+[node name="GetsDarkDialogue" parent="." node_paths=PackedStringArray("triggerButton") instance=ExtResource("18_2sk01")]
+DialogueText = Array[String](["Wow! Now its really dark!", "You set your backpack down and pull out your flashlight."])
+triggerButton = NodePath("../Screen_14/The Buttons/UpButton")
+
+[node name="TriggerFlashlight" type="Node2D" parent="." node_paths=PackedStringArray("button", "flashlightNode")]
+position = Vector2(1480, 2361)
+script = ExtResource("19_t0575")
+button = NodePath("../Screen_14/The Buttons/UpButton")
+flashlightNode = NodePath("../FlashLightOccluder")
 
 [editable path="Screen_13"]
 [editable path="Screen_13/The Buttons"]
