@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://cak4gl40gxbwm"]
+
+[ext_resource type="FontFile" uid="uid://cq0rygikupvde" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="1_yc0ig"]
+[ext_resource type="Script" path="res://Assets/Scripts/StartGame.gd" id="2_xgkp0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d0xce"]
+
+[sub_resource type="Theme" id="Theme_5vpn1"]
+default_font = ExtResource("1_yc0ig")
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackGroundTexture" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("CanvasTexture_d0xce")
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -324.0
+offset_top = 107.02
+offset_right = 324.0
+offset_bottom = 155.02
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yc0ig")
+theme_override_font_sizes/font_size = 48
+text = "One Weird Night"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -246.21
+offset_right = 64.0
+offset_bottom = -206.21
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_5vpn1")
+theme_override_fonts/font = ExtResource("1_yc0ig")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+script = ExtResource("2_xgkp0")
+
+[node name="Options" type="Button" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -121.125
+offset_right = 64.0
+offset_bottom = -81.125
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_5vpn1")
+theme_override_fonts/font = ExtResource("1_yc0ig")
+theme_override_font_sizes/font_size = 32
+text = "Options"

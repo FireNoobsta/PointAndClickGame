@@ -25,7 +25,7 @@ func OnButtonUp():
 	#print("button up")
 	isDragging = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if isDragging:
 		self.modulate = Color.YELLOW
 	elif button.is_hovered():

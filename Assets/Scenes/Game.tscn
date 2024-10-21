@@ -229,7 +229,7 @@ DestinationCamera = NodePath("../../../Screen_12/Camera2D")
 
 [node name="FlashLightOccluder" parent="." instance=ExtResource("17_4t7oy")]
 modulate = Color(1, 1, 1, 0.972549)
-position = Vector2(-2656, -1156)
+position = Vector2(-4986, -412)
 
 [editable path="Screen_13"]
 [editable path="Screen_13/The Buttons"]
