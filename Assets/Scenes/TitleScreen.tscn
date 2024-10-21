@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cak4gl40gxbwm"]
+[gd_scene load_steps=8 format=3 uid="uid://cak4gl40gxbwm"]
 
 [ext_resource type="FontFile" uid="uid://cq0rygikupvde" path="res://Assets/Fonts/PixelOperator8-Bold.ttf" id="1_yc0ig"]
 [ext_resource type="Script" path="res://Assets/Scripts/StartGame.gd" id="2_xgkp0"]
+[ext_resource type="Script" path="res://Assets/Scripts/optionsButton.gd" id="3_b1s3w"]
+[ext_resource type="Script" path="res://Assets/Scripts/volumeSlider.gd" id="3_ex57u"]
+[ext_resource type="AudioStream" uid="uid://cgw21p2xnxvp0" path="res://Assets/Sound/Music/song 1.wav" id="4_opsp0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_d0xce"]
 
@@ -54,8 +57,9 @@ theme_override_font_sizes/font_size = 32
 text = "Play"
 script = ExtResource("2_xgkp0")
 
+[node name="Timer" type="Timer" parent="CanvasLayer/PlayButton"]
+
 [node name="Options" type="Button" parent="CanvasLayer"]
-visible = false
 texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -72,3 +76,73 @@ theme = SubResource("Theme_5vpn1")
 theme_override_fonts/font = ExtResource("1_yc0ig")
 theme_override_font_sizes/font_size = 32
 text = "Options"
+script = ExtResource("3_b1s3w")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -369.875
+offset_right = 292.0
+offset_bottom = 53.125
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/Options/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -20.5
+offset_right = 186.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+script = ExtResource("3_ex57u")
+
+[node name="Label" type="Label" parent="CanvasLayer/Options/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 143.1
+offset_right = 192.0
+offset_bottom = 175.1
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+
+[node name="Button" type="Button" parent="CanvasLayer/Options/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -73.84
+offset_right = 68.0
+offset_bottom = -33.84
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_opsp0")
+autoplay = true
+bus = &"Music"
