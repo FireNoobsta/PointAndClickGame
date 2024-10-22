@@ -38,7 +38,10 @@ left = false
 position = Vector2(400, -193)
 
 [node name="TextureButton" parent="Interactable" index="0"]
-texture_normal = ExtResource("4_fxhcl")
 DialogueText = Array[String](["You got the [color=yellow]gas[/color]!"])
+
+[node name="Sprite2D" parent="Interactable/TextureButton" index="0"]
+scale = Vector2(1.11, 1.11)
+texture = ExtResource("4_fxhcl")
 
 [editable path="Interactable"]

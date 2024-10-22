@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bishvv8l4l2ru"]
+[gd_scene load_steps=8 format=3 uid="uid://bishvv8l4l2ru"]
 
 [ext_resource type="Texture2D" uid="uid://b1a4vund6h2ix" path="res://Assets/Placeholders/road.png" id="1_s852w"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_7i8gb"]
 [ext_resource type="PackedScene" uid="uid://dqsujjtee2bi8" path="res://Assets/Scenes/CarObject.tscn" id="3_n7kiu"]
 [ext_resource type="PackedScene" uid="uid://dmoqp6yjkuyw2" path="res://Assets/Scenes/PlayerInventory.tscn" id="4_07gq6"]
+[ext_resource type="Texture2D" uid="uid://de4k7hmoofklm" path="res://Assets/Placeholders/car.png" id="4_utca4"]
 [ext_resource type="Script" path="res://Assets/Scripts/button_revealer.gd" id="5_blkl3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
@@ -44,6 +45,17 @@ position = Vector2(-585, -240)
 offset_right = 481.0
 offset_bottom = 214.0
 
+[node name="Sprite2D" parent="CarObject/Interactable/TextureButton" index="0"]
+scale = Vector2(2.16162, 2.16162)
+texture = ExtResource("4_utca4")
+
+[node name="Label" parent="CarObject/Interactable/TextureButton" index="1"]
+offset_left = 38.0
+offset_top = 243.0
+offset_right = 132.0
+offset_bottom = 259.0
+text = "Enter Car?"
+
 [node name="PlayerInventory" parent="." instance=ExtResource("4_07gq6")]
 unique_name_in_owner = true
 position = Vector2(-898, -1311)
@@ -54,5 +66,9 @@ itemsToReveal = [NodePath("../The Buttons/LeftButton"), NodePath("../The Buttons
 button = NodePath("../CarObject/Interactable/TextureButton")
 
 [editable path="The Buttons"]
+[editable path="The Buttons/LeftButton"]
+[editable path="The Buttons/UpButton"]
+[editable path="The Buttons/RightButton"]
+[editable path="The Buttons/DownButton"]
 [editable path="CarObject"]
 [editable path="CarObject/Interactable"]

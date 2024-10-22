@@ -60,8 +60,10 @@ texture_filter = 1
 texture = ExtResource("1_ptw8o")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Latch"]
+position = Vector2(0, 1)
 node_a = NodePath("..")
 node_b = NodePath("../StaticBody2D2")
+bias = 0.9
 
 [node name="TextureButton" type="TextureButton" parent="Latch"]
 offset_left = -238.0
@@ -73,6 +75,7 @@ offset_bottom = 27.0
 position = Vector2(-1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Latch/StaticBody2D2"]
+position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_btedf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

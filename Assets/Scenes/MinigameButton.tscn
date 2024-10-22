@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4cublmbqi2kh"]
+
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/new_theme.tres" id="1_s3dt8"]
+[ext_resource type="Script" path="res://Assets/Scripts/minigame_button.gd" id="2_c086s"]
+[ext_resource type="Script" path="res://Assets/Scripts/RevealWithHover.gd" id="3_xbva5"]
+
+[node name="MinigameButton" type="Button"]
+offset_right = 50.0
+offset_bottom = 50.0
+theme = ExtResource("1_s3dt8")
+theme_type_variation = &"PuzzButton"
+script = ExtResource("2_c086s")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = 62.0
+offset_right = 168.0
+offset_bottom = 78.0
+theme = ExtResource("1_s3dt8")
+theme_type_variation = &"PuzzLabel"
+text = "An Obstacle!!"
+script = ExtResource("3_xbva5")

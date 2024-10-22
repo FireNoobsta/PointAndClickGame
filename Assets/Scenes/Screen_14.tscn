@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_swn37"]
 [ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="6_tr5xq"]
 [ext_resource type="Script" path="res://Assets/Scripts/button_revealer.gd" id="7_0x56a"]
-[ext_resource type="Script" path="res://Assets/Scripts/ToggleVisibility.gd" id="7_u7il8"]
+[ext_resource type="PackedScene" uid="uid://b4cublmbqi2kh" path="res://Assets/Scenes/MinigameButton.tscn" id="8_laqen"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -62,15 +62,14 @@ DestinationCamera = NodePath("../Camera2D")
 [node name="BaseMiniGame" parent="." instance=ExtResource("3_qhhwh")]
 position = Vector2(33, 912)
 
-[node name="Gate" type="Sprite2D" parent="." node_paths=PackedStringArray("button")]
+[node name="Gate" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(57, -197)
 scale = Vector2(3.68333, 3.68333)
 texture = ExtResource("4_snetx")
-script = ExtResource("7_u7il8")
-button = NodePath("../LeaveButton")
 
 [node name="Button" type="Button" parent="Gate" node_paths=PackedStringArray("DestinationCamera")]
+visible = false
 texture_filter = 1
 offset_left = -50.2262
 offset_top = -20.362
@@ -85,9 +84,33 @@ script = ExtResource("6_tr5xq")
 DestinationCamera = NodePath("../../BaseMiniGame/Camera2D")
 
 [node name="ButtonRevealer" type="Node2D" parent="." node_paths=PackedStringArray("itemsToReveal", "button")]
+visible = false
 script = ExtResource("7_0x56a")
 itemsToReveal = [NodePath("../The Buttons/UpButton")]
 button = NodePath("../LeaveButton")
 
+[node name="MinigameButton" parent="." node_paths=PackedStringArray("minigameCamera", "returnCamera", "goalButton", "itemsToReveal", "nodesToHide") instance=ExtResource("8_laqen")]
+offset_left = -139.0
+offset_top = -273.0
+offset_right = 136.0
+offset_bottom = -76.0
+minigameCamera = NodePath("../BaseMiniGame/Camera2D")
+returnCamera = NodePath("../Camera2D")
+goalButton = NodePath("../LeaveButton")
+itemsToReveal = [NodePath("../The Buttons/UpButton")]
+nodesToHide = [NodePath("../Gate")]
+
+[node name="Label" parent="MinigameButton" index="0"]
+offset_left = 225.0
+offset_top = 213.0
+offset_right = 387.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 31
+
 [editable path="The Buttons"]
+[editable path="The Buttons/LeftButton"]
+[editable path="The Buttons/UpButton"]
+[editable path="The Buttons/RightButton"]
+[editable path="The Buttons/DownButton"]
 [editable path="BaseMiniGame"]
+[editable path="MinigameButton"]

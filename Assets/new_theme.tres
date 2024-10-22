@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bid2b0spuuf0k"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bid2b0spuuf0k"]
 
 [ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_dq0n1"]
 
@@ -16,6 +16,14 @@ border_color = Color(0.164874, 0.412179, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sixic"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7vnc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.865691, 0.886122, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7pie"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 5
@@ -24,14 +32,30 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0.804661, 0.230217, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjgnn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.953544, 0, 0.0707236, 1)
+
 [resource]
 default_font = ExtResource("1_dq0n1")
 Button/colors/font_color = Color(0.87451, 0.87451, 0.87451, 0)
 Button/styles/focus = SubResource("StyleBoxFlat_ry6ox")
 Button/styles/hover = SubResource("StyleBoxFlat_1hr1w")
 Button/styles/normal = SubResource("StyleBoxFlat_sixic")
+ItemButton/base_type = &"Button"
+ItemButton/styles/hover = SubResource("StyleBoxFlat_b7vnc")
+ItemLabel/base_type = &"Label"
+ItemLabel/colors/font_color = Color(0.866667, 0.886275, 0, 1)
 Label/colors/font_color = Color(0.164706, 0.411765, 1, 1)
 NavigationButton/base_type = &"Button"
 NavigationButton/styles/hover = SubResource("StyleBoxFlat_j7pie")
 NavigationLabel/base_type = &"Label"
 NavigationLabel/colors/font_color = Color(0, 0.803922, 0.231373, 1)
+PuzzButton/base_type = &"Button"
+PuzzButton/styles/hover = SubResource("StyleBoxFlat_rjgnn")
+PuzzLabel/base_type = &"Label"
+PuzzLabel/colors/font_color = Color(0.952941, 0, 0.0705882, 1)

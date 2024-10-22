@@ -1,14 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://7o43yuevclbp"]
+[gd_scene load_steps=5 format=3 uid="uid://7o43yuevclbp"]
 
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/new_theme.tres" id="1_he5jf"]
 [ext_resource type="Texture2D" uid="uid://bqfsm3ml8mjo7" path="res://Assets/Placeholders/Backpack.png" id="1_kq0h7"]
 [ext_resource type="Script" path="res://Assets/Scripts/Interactable.gd" id="2_rw1h4"]
+[ext_resource type="Script" path="res://Assets/Scripts/RevealWithHover.gd" id="4_ww01f"]
 
 [node name="Interactable" type="Node2D"]
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="Button" parent="."]
 texture_filter = 1
-offset_right = 40.0
-offset_bottom = 40.0
-texture_normal = ExtResource("1_kq0h7")
-stretch_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+theme = ExtResource("1_he5jf")
+theme_type_variation = &"ItemButton"
 script = ExtResource("2_rw1h4")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
+texture = ExtResource("1_kq0h7")
+centered = false
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 126.0
+offset_right = 102.0
+offset_bottom = 142.0
+theme = ExtResource("1_he5jf")
+theme_type_variation = &"ItemLabel"
+text = "*shiny*"
+script = ExtResource("4_ww01f")
