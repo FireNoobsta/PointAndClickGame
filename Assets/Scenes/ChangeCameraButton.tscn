@@ -1,18 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwaq2d6y36e4m"]
+[gd_scene load_steps=5 format=3 uid="uid://cwaq2d6y36e4m"]
 
 [ext_resource type="Texture2D" uid="uid://c4yxkggu5gv0d" path="res://Assets/Placeholders/arrowLeft.png" id="1_er34y"]
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/new_theme.tres" id="1_jtt36"]
 [ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="2_ipgq8"]
-[ext_resource type="Texture2D" uid="uid://ctxxvp8dr4uac" path="res://Assets/Placeholders/arrowLeftPressed.png" id="2_ya7yp"]
-[ext_resource type="Texture2D" uid="uid://b33o1uh26pr2x" path="res://Assets/Placeholders/arrowLeftHover.png" id="3_fwd0y"]
-[ext_resource type="BitMap" uid="uid://7k8r1cykcmw5" path="res://Assets/Placeholders/arrowLeftClickMask.png" id="4_x83yo"]
+[ext_resource type="Script" path="res://Assets/Scripts/RevealWithHover.gd" id="4_mdgs5"]
 
-[node name="TextureButton" type="TextureButton"]
+[node name="TextureButton" type="Button"]
 offset_right = 50.0
 offset_bottom = 50.0
 scale = Vector2(1.78089, 1.78089)
-texture_normal = ExtResource("1_er34y")
-texture_pressed = ExtResource("2_ya7yp")
-texture_hover = ExtResource("3_fwd0y")
-texture_click_mask = ExtResource("4_x83yo")
-flip_h = true
+theme = ExtResource("1_jtt36")
+theme_type_variation = &"NavigationButton"
 script = ExtResource("2_ipgq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_er34y")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -42.6753
+offset_top = 54.4671
+offset_right = 103.325
+offset_bottom = 70.4671
+theme = ExtResource("1_jtt36")
+theme_type_variation = &"NavigationLabel"
+text = "Head North?"
+script = ExtResource("4_mdgs5")

@@ -29,9 +29,6 @@
 [node name="Screen_13" parent="." instance=ExtResource("13_ka1bd")]
 position = Vector2(-36, 2367)
 
-[node name="The Buttons" parent="Screen_13" index="3"]
-up = false
-
 [node name="UpButton" parent="Screen_13/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_9/Camera2D")
 

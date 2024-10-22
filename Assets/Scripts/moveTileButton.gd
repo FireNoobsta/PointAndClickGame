@@ -10,5 +10,8 @@ func _ready() -> void:
 
 
 func MoveCamera():
-	DestinationCamera.make_current()
+	if DestinationCamera:
+		DestinationCamera.make_current()
+	else:
+		print(str(self) + " has no destination set!")
 	

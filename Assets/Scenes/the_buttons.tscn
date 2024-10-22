@@ -11,25 +11,53 @@ offset_left = -455.0
 offset_top = 118.0
 offset_right = -405.0
 offset_bottom = 168.0
-flip_h = false
+
+[node name="Label" parent="LeftButton" index="1"]
+text = "Head West?
+"
 
 [node name="UpButton" parent="." instance=ExtResource("1_7g0wv")]
-offset_left = 45.0448
-offset_top = 113.0
-offset_right = 95.0448
-offset_bottom = 163.0
+offset_left = -47.0
+offset_top = 74.0
+offset_right = 3.0
+offset_bottom = 124.0
+
+[node name="Sprite2D" parent="UpButton" index="0"]
+position = Vector2(50, 0)
 rotation = 1.5708
-flip_h = false
+
+[node name="Label" parent="UpButton" index="1"]
+offset_left = -47.1674
+offset_top = -19.6531
+offset_right = 98.8326
+offset_bottom = -3.6531
 
 [node name="RightButton" parent="." instance=ExtResource("1_7g0wv")]
 offset_left = 368.0
-offset_top = 120.0
+offset_top = 119.0
 offset_right = 418.0
-offset_bottom = 170.0
+offset_bottom = 169.0
+
+[node name="Sprite2D" parent="RightButton" index="0"]
+flip_h = true
+
+[node name="Label" parent="RightButton" index="1"]
+text = "Head East?"
 
 [node name="DownButton" parent="." instance=ExtResource("1_7g0wv")]
-offset_left = 45.0448
-offset_top = 185.0
-offset_right = 95.0448
-offset_bottom = 235.0
-rotation = 1.5708
+offset_left = -46.0
+offset_top = 186.0
+offset_right = 4.0
+offset_bottom = 236.0
+
+[node name="Sprite2D" parent="DownButton" index="0"]
+position = Vector2(0, 50)
+rotation = -1.5708
+
+[node name="Label" parent="DownButton" index="1"]
+text = "Head South?"
+
+[editable path="LeftButton"]
+[editable path="UpButton"]
+[editable path="RightButton"]
+[editable path="DownButton"]

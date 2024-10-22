@@ -28,5 +28,6 @@ text = "Tile #13"
 label_settings = SubResource("LabelSettings_8n4rf")
 
 [node name="The Buttons" parent="." instance=ExtResource("2_uovdk")]
+up = false
 down = false
 left = false
