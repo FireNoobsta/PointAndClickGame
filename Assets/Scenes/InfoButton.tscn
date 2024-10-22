@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce0cok5w8seda"]
+
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/new_theme.tres" id="1_4a3e5"]
+[ext_resource type="Script" path="res://Assets/Scripts/Interactable.gd" id="2_ck7rg"]
+[ext_resource type="Script" path="res://Assets/Scripts/RevealWithHover.gd" id="2_t2qf5"]
+
+[node name="InfoButton" type="Button"]
+offset_right = 50.0
+offset_bottom = 50.0
+theme = ExtResource("1_4a3e5")
+script = ExtResource("2_ck7rg")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 55.0
+offset_top = 44.0
+offset_right = 179.0
+offset_bottom = 60.0
+text = "????"
+script = ExtResource("2_t2qf5")

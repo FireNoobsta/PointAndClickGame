@@ -1,4 +1,4 @@
-extends TextureButton
+extends BaseButton
 
 @export_multiline var DialogueText : Array[String] = ["This is descriptive text"]
 const DIABOX := preload("res://Assets/Scenes/DialogueBox.tscn")
