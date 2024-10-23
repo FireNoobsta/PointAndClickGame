@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxn7j5nvviim"
-path="res://.godot/imported/RockyPath.png-24ebedd038e4135b87ae62f399e74feb.ctex"
+uid="uid://bicru0aupk4t"
+path="res://.godot/imported/Flare1.png-83b7cd24b4652539a270ff3d068c6f4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BackgroundPhotos/RockyPath.png"
-dest_files=["res://.godot/imported/RockyPath.png-24ebedd038e4135b87ae62f399e74feb.ctex"]
+source_file="res://Assets/Textures/Flare1.png"
+dest_files=["res://.godot/imported/Flare1.png-83b7cd24b4652539a270ff3d068c6f4f.ctex"]
 
 [params]
 

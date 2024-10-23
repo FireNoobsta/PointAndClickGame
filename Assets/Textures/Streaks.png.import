@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ryg0gxfoodv"
-path="res://.godot/imported/Bushes_Sign_Isolated.png-c92f229ca9c208efe89c2a80d9d7723e.ctex"
+uid="uid://da27eprnheo10"
+path="res://.godot/imported/Streaks.png-69705794643a8f3142e581a6fa818be9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BackgroundPhotos/Bushes_Sign_Isolated.png"
-dest_files=["res://.godot/imported/Bushes_Sign_Isolated.png-c92f229ca9c208efe89c2a80d9d7723e.ctex"]
+source_file="res://Assets/Textures/Streaks.png"
+dest_files=["res://.godot/imported/Streaks.png-69705794643a8f3142e581a6fa818be9.ctex"]
 
 [params]
 

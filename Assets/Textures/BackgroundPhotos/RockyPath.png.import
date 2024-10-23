@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r8iv2qus0h4s"
-path="res://.godot/imported/TreeDirtPath.png-b74550ef49207a6a41da2b5565955f79.ctex"
+uid="uid://dhxn7j5nvviim"
+path="res://.godot/imported/RockyPath.png-b607fc6d9245185169e89c66d3299261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BackgroundPhotos/TreeDirtPath.png"
-dest_files=["res://.godot/imported/TreeDirtPath.png-b74550ef49207a6a41da2b5565955f79.ctex"]
+source_file="res://Assets/Textures/BackgroundPhotos/RockyPath.png"
+dest_files=["res://.godot/imported/RockyPath.png-b607fc6d9245185169e89c66d3299261.ctex"]
 
 [params]
 

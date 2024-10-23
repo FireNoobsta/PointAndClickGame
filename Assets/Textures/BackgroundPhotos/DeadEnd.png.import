@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csqvuw1obd6wb"
-path="res://.godot/imported/Bushes.png-a31aae2ee3354e6bd35e27511b5c4391.ctex"
+uid="uid://d1tsytafjc060"
+path="res://.godot/imported/DeadEnd.png-bcd221312c9bd730d27694130702fa39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BackgroundPhotos/Bushes.png"
-dest_files=["res://.godot/imported/Bushes.png-a31aae2ee3354e6bd35e27511b5c4391.ctex"]
+source_file="res://Assets/Textures/BackgroundPhotos/DeadEnd.png"
+dest_files=["res://.godot/imported/DeadEnd.png-bcd221312c9bd730d27694130702fa39.ctex"]
 
 [params]
 

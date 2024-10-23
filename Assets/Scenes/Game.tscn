@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://tjtgf8ple4xl"]
+[gd_scene load_steps=23 format=3 uid="uid://tjtgf8ple4xl"]
 
 [ext_resource type="PackedScene" uid="uid://c0fgveduh7l81" path="res://Assets/Scenes/Screen_1.tscn" id="2_3fk57"]
 [ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screen_2.tscn" id="2_sbpq0"]
@@ -21,9 +21,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/trigger_flashlight.gd" id="19_t0575"]
 [ext_resource type="Script" path="res://Assets/Scripts/audio_manager.gd" id="20_1e1u5"]
 [ext_resource type="AudioStream" uid="uid://bthirfbx2dpts" path="res://Assets/Sound/Music/song 1 Piano.wav" id="21_v31g2"]
-[ext_resource type="SpriteFrames" uid="uid://yjx4ovnhohwj" path="res://Assets/Placeholders/SpriteFrames/Yoinky_Sploinky.tres" id="22_g8e57"]
 [ext_resource type="Script" path="res://Assets/Scripts/audio_events.gd" id="22_o01a2"]
-[ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="23_x0ewi"]
 
 [node name="Game" type="Node2D"]
 
@@ -281,34 +279,13 @@ events = Array[Dictionary]([{
 "trigger": NodePath("../../Screen_10/CarObject/Interactable/TextureButton")
 }])
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-416, 2313)
-scale = Vector2(2.80261, 2.80261)
-sprite_frames = ExtResource("22_g8e57")
-autoplay = "default"
-
-[node name="InfoButton" parent="." instance=ExtResource("23_x0ewi")]
-offset_left = -450.0
-offset_top = 2210.0
-offset_right = -385.0
-offset_bottom = 2407.0
-DialogueText = Array[String](["This guy is just hitting the yoinky sploinky. Pay him no mind."])
-
-[node name="Label" parent="InfoButton" index="0"]
-offset_left = 74.0
-offset_top = 185.0
-offset_right = 198.0
-offset_bottom = 201.0
-theme_override_font_sizes/font_size = 41
-text = "???"
-
 [editable path="Screen_13"]
 [editable path="Screen_13/The Buttons"]
 [editable path="Screen_13/The Buttons/LeftButton"]
 [editable path="Screen_13/The Buttons/UpButton"]
 [editable path="Screen_13/The Buttons/RightButton"]
 [editable path="Screen_13/The Buttons/DownButton"]
+[editable path="Screen_13/InfoButton"]
 [editable path="Screen_1"]
 [editable path="Screen_1/The Buttons"]
 [editable path="Screen_1/The Buttons/LeftButton"]
@@ -406,4 +383,3 @@ text = "???"
 [editable path="Screen_16/The Buttons/RightButton"]
 [editable path="Screen_16/The Buttons/DownButton"]
 [editable path="Screen_16/Interactable"]
-[editable path="InfoButton"]

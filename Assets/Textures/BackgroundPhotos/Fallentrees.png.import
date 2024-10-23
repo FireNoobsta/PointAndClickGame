@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn88r24aemur"
-path="res://.godot/imported/Garden.png-24dab435e28b8ed47ae3c0c19c158793.ctex"
+uid="uid://y0ajg5dwmiq"
+path="res://.godot/imported/Fallentrees.png-a8b2c34cd51dab686cce8bbb6a7e989d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BackgroundPhotos/Garden.png"
-dest_files=["res://.godot/imported/Garden.png-24dab435e28b8ed47ae3c0c19c158793.ctex"]
+source_file="res://Assets/Textures/BackgroundPhotos/Fallentrees.png"
+dest_files=["res://.godot/imported/Fallentrees.png-a8b2c34cd51dab686cce8bbb6a7e989d.ctex"]
 
 [params]
 

@@ -13,6 +13,10 @@ offset_right = -405.0
 offset_bottom = 168.0
 
 [node name="Label" parent="LeftButton" index="1"]
+offset_left = -43.0
+offset_top = 54.0
+offset_right = 93.0
+offset_bottom = 70.0
 text = "Head West?
 "
 
@@ -42,6 +46,10 @@ offset_bottom = 169.0
 flip_h = true
 
 [node name="Label" parent="RightButton" index="1"]
+offset_left = -43.0
+offset_top = 54.0
+offset_right = 90.0
+offset_bottom = 70.0
 text = "Head East?"
 
 [node name="DownButton" parent="." instance=ExtResource("1_7g0wv")]
