@@ -23,7 +23,7 @@ position = Vector2(-150, 93)
 scale = Vector2(2.37778, 2.37778)
 sprite_frames = ExtResource("2_3p1xc")
 autoplay = "default"
-frame_progress = 0.810469
+frame_progress = 0.706926
 
 [node name="Background2" type="Sprite2D" parent="."]
 texture_filter = 1

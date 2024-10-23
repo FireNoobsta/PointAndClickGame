@@ -76,15 +76,9 @@ DestinationCamera = NodePath("../../../Screen_3/Camera2D")
 DestinationCamera = NodePath("../../../Screen_8/Camera2D")
 
 [node name="Screen_5" parent="." instance=ExtResource("5_cuak0")]
-position = Vector2(2, 730)
-
-[node name="UpButton" parent="Screen_5/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_1/Camera2D")
+position = Vector2(-1585, 1540)
 
 [node name="RightButton" parent="Screen_5/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_6/Camera2D")
-
-[node name="DownButton" parent="Screen_5/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_9/Camera2D")
 
 [node name="Screen_6" parent="." instance=ExtResource("6_2y53t")]
@@ -132,8 +126,8 @@ DestinationCamera = NodePath("../../../Screen_12/Camera2D")
 [node name="Screen_9" parent="." instance=ExtResource("9_y5m01")]
 position = Vector2(-13, 1543)
 
-[node name="The Buttons" parent="Screen_9" index="3"]
-down = false
+[node name="LeftButton" parent="Screen_9/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../Screen_5/Camera2D")
 
 [node name="UpButton" parent="Screen_9/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_5/Camera2D")
@@ -161,7 +155,7 @@ DestinationCamera = NodePath("../../../Screen_14/Camera2D")
 
 [node name="PlayerInventory" parent="Screen_10" index="4"]
 itemButtonEntries = {
-"Gas": NodePath("../../Screen_1/Interactable/TextureButton"),
+"Gas": NodePath("../../Screen_5/Interactable/TextureButton"),
 "Key": NodePath("../../Screen_2/Interactable/TextureButton"),
 "Tire": NodePath("../../Screen_4/Interactable/TextureButton")
 }
@@ -322,6 +316,7 @@ events = Array[Dictionary]([{
 [editable path="Screen_5/The Buttons/UpButton"]
 [editable path="Screen_5/The Buttons/RightButton"]
 [editable path="Screen_5/The Buttons/DownButton"]
+[editable path="Screen_5/Interactable"]
 [editable path="Screen_6"]
 [editable path="Screen_6/The Buttons"]
 [editable path="Screen_6/The Buttons/LeftButton"]
@@ -347,6 +342,7 @@ events = Array[Dictionary]([{
 [editable path="Screen_9/The Buttons/UpButton"]
 [editable path="Screen_9/The Buttons/RightButton"]
 [editable path="Screen_9/The Buttons/DownButton"]
+[editable path="Screen_9/InfoButton"]
 [editable path="Screen_10"]
 [editable path="Screen_10/The Buttons"]
 [editable path="Screen_10/The Buttons/LeftButton"]
