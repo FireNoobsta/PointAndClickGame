@@ -6,7 +6,7 @@ extends Node2D
 
 const MUSIC_ARRAY = [
 	preload("res://Assets/Sound/Music/song 1.wav"),
-	#preload("res://Assets/Sound/Music/song 1 Piano.wav"),
+	preload("res://Assets/Sound/Music/song 1 Piano.wav"),
 	preload("res://Assets/Sound/Music/song 1 minor corrupt.wav")
 	]
 #const SONG_1 = preload("res://Assets/Sound/Music/song 1.wav")
@@ -28,6 +28,6 @@ func FadeMusic(duration : float):
 func SeamlessSwitchSong(index : int = 0):
 	print("Switching songs")
 	var currPos = musicPlayer.get_playback_position()
-	musicPlayer.stream = MUSIC_ARRAY[tempIndex]
+	musicPlayer.stream = MUSIC_ARRAY[index]
 	musicPlayer.play(currPos)
 	tempIndex = (tempIndex + 1) % MUSIC_ARRAY.size()

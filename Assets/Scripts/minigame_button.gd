@@ -22,6 +22,7 @@ func _ready() -> void:
 	goalButton.pressed.connect(MoveToCamera.bind(returnCamera))
 	goalButton.pressed.connect(ShowItems)
 	goalButton.pressed.connect(HideNodes)
+	goalButton.pressed.connect(self.hide)
 
 func MoveToCamera(cam):
 	if cam:

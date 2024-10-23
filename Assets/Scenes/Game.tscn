@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://tjtgf8ple4xl"]
+[gd_scene load_steps=25 format=3 uid="uid://tjtgf8ple4xl"]
 
 [ext_resource type="PackedScene" uid="uid://c0fgveduh7l81" path="res://Assets/Scenes/Screen_1.tscn" id="2_3fk57"]
 [ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screen_2.tscn" id="2_sbpq0"]
@@ -19,9 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://by0b0eltxx3vu" path="res://Assets/Scenes/FlashLightOccluder.tscn" id="17_4t7oy"]
 [ext_resource type="PackedScene" uid="uid://chjcqgfrr65om" path="res://Assets/Scenes/CutsceneDialogue.tscn" id="18_2sk01"]
 [ext_resource type="Script" path="res://Assets/Scripts/trigger_flashlight.gd" id="19_t0575"]
-[ext_resource type="AudioStream" uid="uid://cgw21p2xnxvp0" path="res://Assets/Sound/Music/song 1.wav" id="20_1dio8"]
 [ext_resource type="Script" path="res://Assets/Scripts/audio_manager.gd" id="20_1e1u5"]
+[ext_resource type="AudioStream" uid="uid://bthirfbx2dpts" path="res://Assets/Sound/Music/song 1 Piano.wav" id="21_v31g2"]
 [ext_resource type="SpriteFrames" uid="uid://yjx4ovnhohwj" path="res://Assets/Placeholders/SpriteFrames/new_sprite_frames.tres" id="22_g8e57"]
+[ext_resource type="Script" path="res://Assets/Scripts/audio_events.gd" id="22_o01a2"]
 [ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="23_x0ewi"]
 
 [node name="Game" type="Node2D"]
@@ -252,7 +253,7 @@ flashlightNode = NodePath("../FlashLightOccluder")
 script = ExtResource("20_1e1u5")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("20_1dio8")
+stream = ExtResource("21_v31g2")
 autoplay = true
 bus = &"Music"
 
@@ -272,6 +273,13 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Hello"
+
+[node name="AudioEvents" type="Node2D" parent="AudioManager"]
+script = ExtResource("22_o01a2")
+events = Array[Dictionary]([{
+"songIndex": 2,
+"trigger": NodePath("../../Screen_10/CarObject/Interactable/TextureButton")
+}])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -385,6 +393,7 @@ text = "???"
 [editable path="Screen_14/The Buttons/RightButton"]
 [editable path="Screen_14/The Buttons/DownButton"]
 [editable path="Screen_14/BaseMiniGame"]
+[editable path="Screen_14/MinigameButton"]
 [editable path="Screen_15"]
 [editable path="Screen_15/The Buttons"]
 [editable path="Screen_15/The Buttons/LeftButton"]
