@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rsv0h0ylklhn"]
+[gd_scene load_steps=5 format=3 uid="uid://rsv0h0ylklhn"]
 
 [ext_resource type="PackedScene" uid="uid://chjcqgfrr65om" path="res://Assets/Scenes/CutsceneDialogue.tscn" id="1_7wq41"]
 [ext_resource type="Script" path="res://Assets/Scenes/RestartGame.gd" id="1_kh5i1"]
 [ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="2_p1rub"]
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/new_theme.tres" id="2_x5rxe"]
 
 [node name="EndScreen" type="Node2D"]
 script = ExtResource("1_kh5i1")
@@ -14,21 +15,41 @@ offset_right = 575.0
 offset_bottom = 321.0
 color = Color(0, 0, 0, 1)
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+offset_left = -575.0
+offset_top = -322.0
+offset_right = 568.0
+offset_bottom = 319.0
+theme = ExtResource("2_x5rxe")
+theme_override_constants/line_separation = 20
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]
+
+[u]Credits[/u]
+
+Programming - FireNoobsta
+Art - FireNoobsta
+Music - Rise Kaiju
+Inspiration - Sigma
+[/center]
+"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="InfoButton" parent="." instance=ExtResource("2_p1rub")]
-offset_left = -119.0
-offset_top = -113.0
-offset_right = 92.0
-offset_bottom = 6.0
-text = "Wake Up"
+offset_left = -303.0
+offset_top = -250.0
+offset_right = 299.0
+offset_bottom = 82.0
 
 [node name="Label" parent="InfoButton" index="0"]
-offset_left = 27.0
-offset_top = 43.0
-offset_right = 195.0
-offset_bottom = 72.0
-text = ""
+offset_left = 422.0
+offset_top = 342.0
+offset_right = 590.0
+offset_bottom = 371.0
+text = "Creators"
 
 [node name="CutsceneDialogue" parent="." instance=ExtResource("1_7wq41")]
 DialogueText = Array[String](["Woah there! I'm sorry but you're gonna have to stop there!", "You haven't come up with what happens next yet", "Wake up for now. Maybe after a while you'll have the next part done!"])
