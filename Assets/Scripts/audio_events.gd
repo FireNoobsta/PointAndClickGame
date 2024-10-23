@@ -23,11 +23,7 @@ func _ready() -> void:
 			currButton.pressed.connect(TriggerSongEvent.bind(currIndex, currButton))
 			#event["trigger"].pressed.disconnect()
 
-func TriggerSongEvent(songIndex  : int, button : Button):
+func TriggerSongEvent(songIndex  : int, button : BaseButton):
 	print("Triggered song " + str(songIndex))
 	manager.SeamlessSwitchSong(songIndex)
 	button.pressed.disconnect(TriggerSongEvent)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

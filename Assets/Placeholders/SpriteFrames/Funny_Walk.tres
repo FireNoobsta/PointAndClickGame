@@ -1,0 +1,194 @@
+[gd_resource type="SpriteFrames" load_steps=47 format=3 uid="uid://mm2x5ynblgmr"]
+
+[ext_resource type="Texture2D" uid="uid://c6jlga1jk514g" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/0.png" id="1_xt1w5"]
+[ext_resource type="Texture2D" uid="uid://cdcwypo04c8pp" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/1.png" id="2_wts7j"]
+[ext_resource type="Texture2D" uid="uid://dd0soy4n5mem1" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/2.png" id="3_u3lyc"]
+[ext_resource type="Texture2D" uid="uid://dl68qbu80i88m" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/3.png" id="4_2gte7"]
+[ext_resource type="Texture2D" uid="uid://rq1agdmubblt" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/4.png" id="5_upej7"]
+[ext_resource type="Texture2D" uid="uid://bsth5jlguwun7" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/5.png" id="6_boi1l"]
+[ext_resource type="Texture2D" uid="uid://b638h6833ew4n" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/6.png" id="7_qu48d"]
+[ext_resource type="Texture2D" uid="uid://b250w6e1davsn" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/7.png" id="8_f4bik"]
+[ext_resource type="Texture2D" uid="uid://d0e0607m43qam" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/8.png" id="9_y6fwn"]
+[ext_resource type="Texture2D" uid="uid://cf25257eudwfi" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/9.png" id="10_hqbp1"]
+[ext_resource type="Texture2D" uid="uid://cu207ecnfxhk1" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/10.png" id="11_1462p"]
+[ext_resource type="Texture2D" uid="uid://wxsh4vrnc8rn" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/11.png" id="12_b5rd4"]
+[ext_resource type="Texture2D" uid="uid://b4u2xwwunii20" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/12.png" id="13_nwycl"]
+[ext_resource type="Texture2D" uid="uid://07ejvgoh6x8h" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/13.png" id="14_y3efc"]
+[ext_resource type="Texture2D" uid="uid://b4suv3aebk1p5" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/14.png" id="15_q0twj"]
+[ext_resource type="Texture2D" uid="uid://bi3d5x8drh18n" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/15.png" id="16_haixs"]
+[ext_resource type="Texture2D" uid="uid://c0ma2lxjqh4g4" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/16.png" id="17_tbpm6"]
+[ext_resource type="Texture2D" uid="uid://baok4vt1xf17m" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/17.png" id="18_ht862"]
+[ext_resource type="Texture2D" uid="uid://dw621x03khtt8" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/18.png" id="19_o55ce"]
+[ext_resource type="Texture2D" uid="uid://bqkx1t38upiec" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/19.png" id="20_i4lpt"]
+[ext_resource type="Texture2D" uid="uid://d2j07472ae574" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/20.png" id="21_hj8ut"]
+[ext_resource type="Texture2D" uid="uid://beiclleg5j4ly" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/21.png" id="22_eud0f"]
+[ext_resource type="Texture2D" uid="uid://da43wnye17r5v" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/22.png" id="23_8wmil"]
+[ext_resource type="Texture2D" uid="uid://cdo5n2lyusu5q" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/23.png" id="24_lgmg3"]
+[ext_resource type="Texture2D" uid="uid://cm27sxx3ldcey" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/24.png" id="25_tyxl7"]
+[ext_resource type="Texture2D" uid="uid://srrovn8jr3pq" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/25.png" id="26_aajcs"]
+[ext_resource type="Texture2D" uid="uid://ddiaaqmyjm3xd" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/26.png" id="27_hv0hd"]
+[ext_resource type="Texture2D" uid="uid://dspv6n5caoqa6" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/27.png" id="28_0lvjr"]
+[ext_resource type="Texture2D" uid="uid://cc0i31cjq3hgk" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/28.png" id="29_ns3jn"]
+[ext_resource type="Texture2D" uid="uid://d2hdww2ybxluq" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/29.png" id="30_axcbw"]
+[ext_resource type="Texture2D" uid="uid://bj54n8ujipmyp" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/30.png" id="31_4p3v2"]
+[ext_resource type="Texture2D" uid="uid://c4uetagkyq4yh" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/31.png" id="32_j6gub"]
+[ext_resource type="Texture2D" uid="uid://cvxfocpuct6yu" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/32.png" id="33_cponx"]
+[ext_resource type="Texture2D" uid="uid://baihjxudymry5" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/33.png" id="34_34r5q"]
+[ext_resource type="Texture2D" uid="uid://pcuvwdssk1o4" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/34.png" id="35_p0abs"]
+[ext_resource type="Texture2D" uid="uid://olg2d4w5ts3y" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/35.png" id="36_5ete0"]
+[ext_resource type="Texture2D" uid="uid://dey83xudryhof" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/36.png" id="37_5oy0d"]
+[ext_resource type="Texture2D" uid="uid://kscf62vviqrj" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/37.png" id="38_b88y7"]
+[ext_resource type="Texture2D" uid="uid://y3crnpgnksrc" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/38.png" id="39_8a2k3"]
+[ext_resource type="Texture2D" uid="uid://cgndqjvrqeavs" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/39.png" id="40_7mqbj"]
+[ext_resource type="Texture2D" uid="uid://dpir7q4n8jyfn" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/40.png" id="41_xvts5"]
+[ext_resource type="Texture2D" uid="uid://c27bug0feinte" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/41.png" id="42_3xgur"]
+[ext_resource type="Texture2D" uid="uid://r5brmlppdamx" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/42.png" id="43_drqy0"]
+[ext_resource type="Texture2D" uid="uid://co8k6j3j4akst" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/43.png" id="44_rh6ii"]
+[ext_resource type="Texture2D" uid="uid://deergkhlo4jq7" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/44.png" id="45_th0up"]
+[ext_resource type="Texture2D" uid="uid://c6vf20l5nme18" path="res://Assets/Placeholders/SpriteFrames/Funny Walk Anim/45.png" id="46_qox0p"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xt1w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wts7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u3lyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2gte7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_upej7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_boi1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qu48d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f4bik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_y6fwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hqbp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1462p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b5rd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nwycl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y3efc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_q0twj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_haixs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tbpm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ht862")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_o55ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i4lpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hj8ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_eud0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8wmil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lgmg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_tyxl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_aajcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hv0hd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0lvjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ns3jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_axcbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4p3v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_j6gub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cponx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_34r5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_p0abs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_5ete0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_5oy0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_b88y7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_8a2k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_7mqbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_xvts5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_3xgur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_drqy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_rh6ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_th0up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qox0p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

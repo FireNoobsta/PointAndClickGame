@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bid2b0spuuf0k"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bid2b0spuuf0k"]
 
 [ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_dq0n1"]
 
@@ -14,6 +14,9 @@ border_width_bottom = 5
 border_color = Color(0.164874, 0.412179, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sixic"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yodn5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7vnc"]
@@ -46,6 +49,7 @@ Button/colors/font_color = Color(0.87451, 0.87451, 0.87451, 0)
 Button/styles/focus = SubResource("StyleBoxFlat_ry6ox")
 Button/styles/hover = SubResource("StyleBoxFlat_1hr1w")
 Button/styles/normal = SubResource("StyleBoxFlat_sixic")
+Button/styles/pressed = SubResource("StyleBoxFlat_yodn5")
 ItemButton/base_type = &"Button"
 ItemButton/styles/hover = SubResource("StyleBoxFlat_b7vnc")
 ItemLabel/base_type = &"Label"
