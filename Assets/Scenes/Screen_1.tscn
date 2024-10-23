@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0fgveduh7l81"]
+[gd_scene load_steps=4 format=3 uid="uid://c0fgveduh7l81"]
 
 [ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_dwqje"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_wqot3"]
-[ext_resource type="PackedScene" uid="uid://7o43yuevclbp" path="res://Assets/Scenes/Interactable.tscn" id="3_4fwha"]
-[ext_resource type="Texture2D" uid="uid://bbmojmpdfjfu3" path="res://Assets/Placeholders/gas.png" id="4_fxhcl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
@@ -33,15 +31,3 @@ label_settings = SubResource("LabelSettings_8n4rf")
 [node name="The Buttons" parent="." instance=ExtResource("2_wqot3")]
 up = false
 left = false
-
-[node name="Interactable" parent="." instance=ExtResource("3_4fwha")]
-position = Vector2(400, -193)
-
-[node name="TextureButton" parent="Interactable" index="0"]
-DialogueText = Array[String](["You got the [color=yellow]gas[/color]!"])
-
-[node name="Sprite2D" parent="Interactable/TextureButton" index="0"]
-scale = Vector2(1.11, 1.11)
-texture = ExtResource("4_fxhcl")
-
-[editable path="Interactable"]

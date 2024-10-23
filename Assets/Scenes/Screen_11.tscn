@@ -1,12 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2wjavrog2q6w"]
 
-[ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_7narr"]
+[ext_resource type="Texture2D" uid="uid://r8iv2qus0h4s" path="res://Assets/Textures/BackgroundPhotos/TreeDirtPath.png" id="1_0617x"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_frsff"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
-font_size = 32
-outline_size = 7
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="2_sgw1w"]
 
 [node name="Screen_11" type="Node2D"]
 
@@ -16,15 +12,26 @@ position = Vector2(0, -5.96046e-08)
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(107, -1)
 scale = Vector2(4.76471, 4.76471)
-texture = ExtResource("1_7narr")
+texture = ExtResource("1_0617x")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -52.0
-offset_top = -319.0
-offset_right = 50.0
-offset_bottom = -274.0
-text = "Tile #11"
-label_settings = SubResource("LabelSettings_8n4rf")
+[node name="InfoButton" parent="." instance=ExtResource("2_sgw1w")]
+offset_left = -452.0
+offset_top = -318.0
+offset_right = -86.0
+offset_bottom = 132.0
+DialogueText = Array[String](["Please reflect upon what this means in spite of you"])
+
+[node name="Label" parent="InfoButton" index="0"]
+offset_left = 226.0
+offset_top = 472.0
+offset_right = 380.0
+offset_bottom = 501.0
+text = "A Giver"
 
 [node name="The Buttons" parent="." instance=ExtResource("2_frsff")]
+up = false
+down = false
+
+[editable path="InfoButton"]
