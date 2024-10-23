@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7xnj6rddjka0"]
+[gd_scene load_steps=10 format=3 uid="uid://7xnj6rddjka0"]
 
 [ext_resource type="Texture2D" uid="uid://dhxn7j5nvviim" path="res://Assets/Textures/BackgroundPhotos/RockyPath.png" id="1_d8qdj"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_dvye8"]
@@ -9,11 +9,6 @@
 [ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="6_tr5xq"]
 [ext_resource type="PackedScene" uid="uid://b4cublmbqi2kh" path="res://Assets/Scenes/MinigameButton.tscn" id="8_laqen"]
 [ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="8_wvkxd"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
-font_size = 32
-outline_size = 7
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Screen_14" type="Node2D"]
 
@@ -35,14 +30,6 @@ scale = Vector2(23.3332, 23.3332)
 texture = ExtResource("1_d8qdj")
 region_enabled = true
 region_rect = Rect2(120, 253, 52, 33)
-
-[node name="Label" type="Label" parent="."]
-offset_left = -52.0
-offset_top = -319.0
-offset_right = 50.0
-offset_bottom = -274.0
-text = "Tile #14"
-label_settings = SubResource("LabelSettings_8n4rf")
 
 [node name="The Buttons" parent="." instance=ExtResource("2_dvye8")]
 up = false

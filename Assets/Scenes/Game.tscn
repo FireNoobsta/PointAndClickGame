@@ -159,7 +159,7 @@ DestinationCamera = NodePath("../../../Screen_11/Camera2D")
 [node name="DownButton" parent="Screen_10/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_14/Camera2D")
 
-[node name="PlayerInventory" parent="Screen_10" index="5"]
+[node name="PlayerInventory" parent="Screen_10" index="4"]
 itemButtonEntries = {
 "Gas": NodePath("../../Screen_1/Interactable/TextureButton"),
 "Key": NodePath("../../Screen_16/Interactable/TextureButton"),
@@ -326,6 +326,7 @@ events = Array[Dictionary]([{
 [editable path="Screen_6/The Buttons/UpButton"]
 [editable path="Screen_6/The Buttons/RightButton"]
 [editable path="Screen_6/The Buttons/DownButton"]
+[editable path="Screen_6/InfoButton"]
 [editable path="Screen_7"]
 [editable path="Screen_7/The Buttons"]
 [editable path="Screen_7/The Buttons/LeftButton"]
