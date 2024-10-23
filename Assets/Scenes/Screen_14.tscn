@@ -1,20 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://7xnj6rddjka0"]
+[gd_scene load_steps=11 format=3 uid="uid://7xnj6rddjka0"]
 
-[ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_hov22"]
+[ext_resource type="Texture2D" uid="uid://dhxn7j5nvviim" path="res://Assets/Textures/BackgroundPhotos/RockyPath.png" id="1_d8qdj"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_dvye8"]
 [ext_resource type="PackedScene" uid="uid://b570g85md0jix" path="res://Assets/Scenes/BaseMiniGame.tscn" id="3_qhhwh"]
 [ext_resource type="Texture2D" uid="uid://df0fw0qijsldi" path="res://Assets/Placeholders/gate.png" id="4_snetx"]
 [ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="4_swn37"]
+[ext_resource type="Texture2D" uid="uid://c4yxkggu5gv0d" path="res://Assets/Placeholders/arrowLeft.png" id="5_2ov53"]
 [ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="6_tr5xq"]
 [ext_resource type="PackedScene" uid="uid://b4cublmbqi2kh" path="res://Assets/Scenes/MinigameButton.tscn" id="8_laqen"]
+[ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="8_wvkxd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
 font_size = 32
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0fvul"]
-size = Vector2(48, 48)
 
 [node name="Screen_14" type="Node2D"]
 
@@ -25,7 +24,17 @@ position = Vector2(0, -5.96046e-08)
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4.76471, 4.76471)
-texture = ExtResource("1_hov22")
+texture = ExtResource("1_d8qdj")
+region_enabled = true
+region_rect = Rect2(0, 212, 273, 163)
+
+[node name="Background2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-25, 815)
+scale = Vector2(23.3332, 23.3332)
+texture = ExtResource("1_d8qdj")
+region_enabled = true
+region_rect = Rect2(120, 253, 52, 33)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -52.0
@@ -40,12 +49,6 @@ up = false
 right = false
 down = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.0811248, 0.670091, 7.70092e-07, 1)
-position = Vector2(259, 901)
-scale = Vector2(9.78794, 9.70793)
-texture = SubResource("PlaceholderTexture2D_0fvul")
-
 [node name="LeaveButton" type="Button" parent="." node_paths=PackedStringArray("DestinationCamera")]
 texture_filter = 1
 offset_left = -276.0
@@ -58,20 +61,42 @@ text = "Leave
 script = ExtResource("6_tr5xq")
 DestinationCamera = NodePath("../Camera2D")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.351563, 0.351563, 0.351563, 1)
+texture_filter = 1
+position = Vector2(743, 913)
+scale = Vector2(42.1, 42.1)
+texture = ExtResource("5_2ov53")
+flip_h = true
+
 [node name="BaseMiniGame" parent="." instance=ExtResource("3_qhhwh")]
-position = Vector2(33, 912)
+position = Vector2(30, 882)
 
 [node name="Gate" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(57, -197)
-scale = Vector2(3.68333, 3.68333)
+position = Vector2(51, -104)
+scale = Vector2(1.04863, 1.04863)
 texture = ExtResource("4_snetx")
 
+[node name="InfoButton" parent="." instance=ExtResource("8_wvkxd")]
+offset_left = 2.0
+offset_top = -140.0
+offset_right = 60.0
+offset_bottom = -69.0
+DialogueText = Array[String](["The path is clear! Nothing stands in your way!!"])
+
+[node name="Label" parent="InfoButton" index="0"]
+offset_left = 65.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 68.0
+text = "Nothing"
+
 [node name="MinigameButton" parent="." node_paths=PackedStringArray("minigameCamera", "returnCamera", "goalButton", "itemsToReveal", "nodesToHide") instance=ExtResource("8_laqen")]
-offset_left = -139.0
-offset_top = -273.0
-offset_right = 136.0
-offset_bottom = -76.0
+offset_left = -18.0
+offset_top = -140.0
+offset_right = 86.0
+offset_bottom = -58.0
 minigameCamera = NodePath("../BaseMiniGame/Camera2D")
 returnCamera = NodePath("../Camera2D")
 goalButton = NodePath("../LeaveButton")
@@ -79,10 +104,10 @@ itemsToReveal = [NodePath("../The Buttons/UpButton")]
 nodesToHide = [NodePath("../Gate")]
 
 [node name="Label" parent="MinigameButton" index="0"]
-offset_left = 225.0
-offset_top = 213.0
-offset_right = 387.0
-offset_bottom = 229.0
+offset_left = 106.0
+offset_top = 80.0
+offset_right = 420.0
+offset_bottom = 112.0
 theme_override_font_sizes/font_size = 31
 
 [editable path="The Buttons"]
@@ -91,4 +116,5 @@ theme_override_font_sizes/font_size = 31
 [editable path="The Buttons/RightButton"]
 [editable path="The Buttons/DownButton"]
 [editable path="BaseMiniGame"]
+[editable path="InfoButton"]
 [editable path="MinigameButton"]

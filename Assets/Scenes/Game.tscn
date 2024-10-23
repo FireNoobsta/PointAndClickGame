@@ -194,7 +194,7 @@ DestinationCamera = NodePath("../../../Screen_8/Camera2D")
 DestinationCamera = NodePath("../../../Screen_16/Camera2D")
 
 [node name="Screen_14" parent="." instance=ExtResource("14_kg4vh")]
-position = Vector2(1480, 2361)
+position = Vector2(1426, 2402)
 
 [node name="LeftButton" parent="Screen_14/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_13/Camera2D")
@@ -286,6 +286,8 @@ events = Array[Dictionary]([{
 [editable path="Screen_13/The Buttons/RightButton"]
 [editable path="Screen_13/The Buttons/DownButton"]
 [editable path="Screen_13/InfoButton"]
+[editable path="Screen_13/InfoButton2"]
+[editable path="Screen_13/InfoButton3"]
 [editable path="Screen_1"]
 [editable path="Screen_1/The Buttons"]
 [editable path="Screen_1/The Buttons/LeftButton"]
@@ -369,6 +371,7 @@ events = Array[Dictionary]([{
 [editable path="Screen_14/The Buttons/RightButton"]
 [editable path="Screen_14/The Buttons/DownButton"]
 [editable path="Screen_14/BaseMiniGame"]
+[editable path="Screen_14/InfoButton"]
 [editable path="Screen_14/MinigameButton"]
 [editable path="Screen_15"]
 [editable path="Screen_15/The Buttons"]
