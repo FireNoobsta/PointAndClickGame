@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cehti08jgy5j5"]
+[gd_scene load_steps=6 format=3 uid="uid://cehti08jgy5j5"]
 
-[ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_selab"]
+[ext_resource type="Texture2D" uid="uid://d1tsytafjc060" path="res://Assets/Textures/BackgroundPhotos/DeadEnd.png" id="1_6700o"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_cwr67"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
-font_size = 32
-outline_size = 7
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://7o43yuevclbp" path="res://Assets/Scenes/Interactable.tscn" id="3_meuyy"]
+[ext_resource type="Texture2D" uid="uid://da27eprnheo10" path="res://Assets/Textures/Streaks.png" id="4_wjpgc"]
+[ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="5_0lh5p"]
 
 [node name="Screen_2" type="Node2D"]
 
@@ -16,16 +14,47 @@ position = Vector2(0, -5.96046e-08)
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(4.76471, 4.76471)
-texture = ExtResource("1_selab")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -52.0
-offset_top = -319.0
-offset_right = 50.0
-offset_bottom = -274.0
-text = "Tile #2"
-label_settings = SubResource("LabelSettings_8n4rf")
+position = Vector2(109, -1)
+scale = Vector2(5.45378, 5.45378)
+texture = ExtResource("1_6700o")
 
 [node name="The Buttons" parent="." instance=ExtResource("2_cwr67")]
 up = false
+right = false
+left = false
+
+[node name="Interactable" parent="." instance=ExtResource("3_meuyy")]
+position = Vector2(-173, 75)
+
+[node name="TextureButton" parent="Interactable" index="0"]
+DialogueText = Array[String](["Hey! Its your backpack!", "You found the car [color=yellow]keys[/color] in your bag"])
+
+[node name="Label" parent="Interactable/TextureButton" index="1"]
+offset_left = -79.0
+offset_top = 128.0
+offset_right = 89.0
+offset_bottom = 157.0
+text = "Secrets"
+
+[node name="Streaks" type="Sprite2D" parent="."]
+position = Vector2(34, -71)
+texture = ExtResource("4_wjpgc")
+region_enabled = true
+region_rect = Rect2(2182, 0, 585, 288)
+
+[node name="InfoButton" parent="." instance=ExtResource("5_0lh5p")]
+offset_left = -117.0
+offset_top = -167.0
+offset_right = 310.0
+offset_bottom = -27.0
+DialogueText = Array[String](["I often wonder which are fake and which are a part of my imagination"])
+
+[node name="Label" parent="InfoButton" index="0"]
+offset_left = 375.0
+offset_top = 153.0
+offset_right = 522.0
+offset_bottom = 182.0
+text = "Freaks"
+
+[editable path="Interactable"]
+[editable path="InfoButton"]
