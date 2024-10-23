@@ -153,6 +153,9 @@ DestinationCamera = NodePath("../../../Screen_11/Camera2D")
 [node name="DownButton" parent="Screen_10/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_14/Camera2D")
 
+[node name="CarObject" parent="Screen_10" index="3" node_paths=PackedStringArray("audioManager")]
+audioManager = NodePath("../../AudioManager")
+
 [node name="PlayerInventory" parent="Screen_10" index="4"]
 itemButtonEntries = {
 "Gas": NodePath("../../Screen_5/Interactable/TextureButton"),
