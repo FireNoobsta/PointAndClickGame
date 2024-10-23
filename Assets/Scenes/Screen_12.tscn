@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://chcjpwinltbta"]
+[gd_scene load_steps=6 format=3 uid="uid://chcjpwinltbta"]
 
-[ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_mxavx"]
+[ext_resource type="Texture2D" uid="uid://bicmrjqv5e48" path="res://Assets/Textures/BackgroundPhotos/RockyRiver.png" id="1_g8d4k"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_bsjku"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
-font_size = 32
-outline_size = 7
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://7o43yuevclbp" path="res://Assets/Scenes/Interactable.tscn" id="3_a73dg"]
+[ext_resource type="Texture2D" uid="uid://ddusrcnsgik85" path="res://Assets/Placeholders/tire.png" id="4_0nfjj"]
+[ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="5_jku5c"]
 
 [node name="Screen_12" type="Node2D"]
 
@@ -17,15 +15,38 @@ position = Vector2(0, -5.96046e-08)
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4.76471, 4.76471)
-texture = ExtResource("1_mxavx")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -52.0
-offset_top = -319.0
-offset_right = 50.0
-offset_bottom = -274.0
-text = "Tile #12"
-label_settings = SubResource("LabelSettings_8n4rf")
+texture = ExtResource("1_g8d4k")
 
 [node name="The Buttons" parent="." instance=ExtResource("2_bsjku")]
+up = false
 right = false
+down = false
+
+[node name="Interactable" parent="." instance=ExtResource("3_a73dg")]
+position = Vector2(17, 109)
+
+[node name="TextureButton" parent="Interactable" index="0"]
+DialogueText = Array[String](["A spare tire must have dropped from one of the trees!", "You grab the [color=yellow]tire[/color]. After all, this is how trees spread their seeds"])
+
+[node name="Sprite2D" parent="Interactable/TextureButton" index="0"]
+texture = ExtResource("4_0nfjj")
+
+[node name="Label" parent="Interactable/TextureButton" index="1"]
+text = "Waow"
+
+[node name="InfoButton" parent="." instance=ExtResource("5_jku5c")]
+offset_left = -174.0
+offset_top = -313.0
+offset_right = 232.0
+offset_bottom = -215.0
+DialogueText = Array[String](["You want to talk to them?", "There is no need. You know what they say"])
+
+[node name="Label" parent="InfoButton" index="0"]
+offset_left = 286.0
+offset_top = 120.0
+offset_right = 384.0
+offset_bottom = 149.0
+text = "Them"
+
+[editable path="Interactable"]
+[editable path="InfoButton"]

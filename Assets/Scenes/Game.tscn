@@ -157,7 +157,7 @@ DestinationCamera = NodePath("../../../Screen_14/Camera2D")
 itemButtonEntries = {
 "Gas": NodePath("../../Screen_5/Interactable/TextureButton"),
 "Key": NodePath("../../Screen_2/Interactable/TextureButton"),
-"Tire": NodePath("../../Screen_4/Interactable/TextureButton")
+"Tire": NodePath("../../Screen_12/Interactable/TextureButton")
 }
 
 [node name="Screen_11" parent="." instance=ExtResource("11_3ttlc")]
@@ -308,7 +308,6 @@ events = Array[Dictionary]([{
 [editable path="Screen_4/The Buttons/UpButton"]
 [editable path="Screen_4/The Buttons/RightButton"]
 [editable path="Screen_4/The Buttons/DownButton"]
-[editable path="Screen_4/Interactable"]
 [editable path="Screen_5"]
 [editable path="Screen_5/The Buttons"]
 [editable path="Screen_5/The Buttons/LeftButton"]
@@ -363,6 +362,8 @@ events = Array[Dictionary]([{
 [editable path="Screen_12/The Buttons/UpButton"]
 [editable path="Screen_12/The Buttons/RightButton"]
 [editable path="Screen_12/The Buttons/DownButton"]
+[editable path="Screen_12/Interactable"]
+[editable path="Screen_12/InfoButton"]
 [editable path="Screen_14"]
 [editable path="Screen_14/The Buttons"]
 [editable path="Screen_14/The Buttons/LeftButton"]
