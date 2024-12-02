@@ -1,21 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://tjtgf8ple4xl"]
+[gd_scene load_steps=16 format=3 uid="uid://tjtgf8ple4xl"]
 
-[ext_resource type="PackedScene" uid="uid://c0fgveduh7l81" path="res://Assets/Scenes/Screen_1.tscn" id="2_3fk57"]
-[ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screen_2.tscn" id="2_sbpq0"]
-[ext_resource type="PackedScene" uid="uid://drtc1gatfwwe8" path="res://Assets/Scenes/Screen_3.tscn" id="3_w0id4"]
-[ext_resource type="PackedScene" uid="uid://bnbd87ct6vj5b" path="res://Assets/Scenes/Screen_4.tscn" id="4_5u7a3"]
-[ext_resource type="PackedScene" uid="uid://cg0h4egdw076t" path="res://Assets/Scenes/Screen_5.tscn" id="5_cuak0"]
-[ext_resource type="PackedScene" uid="uid://bvh7u1msfnntk" path="res://Assets/Scenes/Screen_6.tscn" id="6_2y53t"]
-[ext_resource type="PackedScene" uid="uid://cy13bhgw10q87" path="res://Assets/Scenes/Screen_7.tscn" id="7_ahdpt"]
-[ext_resource type="PackedScene" uid="uid://bqaq68jrcj0lm" path="res://Assets/Scenes/Screen_8.tscn" id="8_6w8ps"]
-[ext_resource type="PackedScene" uid="uid://dio3f6626x550" path="res://Assets/Scenes/Screen_9.tscn" id="9_y5m01"]
-[ext_resource type="PackedScene" uid="uid://bishvv8l4l2ru" path="res://Assets/Scenes/Screen_10.tscn" id="10_hpdqs"]
-[ext_resource type="PackedScene" uid="uid://d2wjavrog2q6w" path="res://Assets/Scenes/Screen_11.tscn" id="11_3ttlc"]
-[ext_resource type="PackedScene" uid="uid://chcjpwinltbta" path="res://Assets/Scenes/Screen_12.tscn" id="12_2h6ax"]
-[ext_resource type="PackedScene" uid="uid://bc2i1qfv1wqyt" path="res://Assets/Scenes/Screen_13.tscn" id="13_ka1bd"]
-[ext_resource type="PackedScene" uid="uid://7xnj6rddjka0" path="res://Assets/Scenes/Screen_14.tscn" id="14_kg4vh"]
-[ext_resource type="PackedScene" uid="uid://dvm4mg710y4fj" path="res://Assets/Scenes/Screen_15.tscn" id="15_j1075"]
-[ext_resource type="PackedScene" uid="uid://oqqjfjeubw7p" path="res://Assets/Scenes/Screen_16.tscn" id="16_btmca"]
+[ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screens/Cell_1.3.tscn" id="2_sbpq0"]
+[ext_resource type="PackedScene" uid="uid://cg0h4egdw076t" path="res://Assets/Scenes/Screens/Cell_-1.1.tscn" id="5_cuak0"]
+[ext_resource type="PackedScene" uid="uid://bvh7u1msfnntk" path="res://Assets/Scenes/Screens/Cell_1.2.tscn" id="6_2y53t"]
+[ext_resource type="PackedScene" uid="uid://dio3f6626x550" path="res://Assets/Scenes/Screens/Cell_0.1.tscn" id="9_y5m01"]
+[ext_resource type="PackedScene" uid="uid://bishvv8l4l2ru" path="res://Assets/Scenes/Screens/Cell_1.1.tscn" id="10_hpdqs"]
+[ext_resource type="PackedScene" uid="uid://d2wjavrog2q6w" path="res://Assets/Scenes/Screens/Cell_2.1.tscn" id="11_3ttlc"]
+[ext_resource type="PackedScene" uid="uid://chcjpwinltbta" path="res://Assets/Scenes/Screens/Cell_3.1.tscn" id="12_2h6ax"]
+[ext_resource type="PackedScene" uid="uid://bc2i1qfv1wqyt" path="res://Assets/Scenes/Screens/Cell_0.0.tscn" id="13_ka1bd"]
+[ext_resource type="PackedScene" uid="uid://7xnj6rddjka0" path="res://Assets/Scenes/Screens/Cell_1.0.tscn" id="14_kg4vh"]
 [ext_resource type="PackedScene" uid="uid://by0b0eltxx3vu" path="res://Assets/Scenes/FlashLightOccluder.tscn" id="17_4t7oy"]
 [ext_resource type="PackedScene" uid="uid://chjcqgfrr65om" path="res://Assets/Scenes/CutsceneDialogue.tscn" id="18_2sk01"]
 [ext_resource type="Script" path="res://Assets/Scripts/trigger_flashlight.gd" id="19_t0575"]
@@ -25,206 +18,128 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Screen_13" parent="." instance=ExtResource("13_ka1bd")]
+[node name="Screens" type="Node2D" parent="."]
+
+[node name="StartScreen" parent="Screens" instance=ExtResource("13_ka1bd")]
 position = Vector2(-36, 2367)
 
-[node name="UpButton" parent="Screen_13/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_9/Camera2D")
+[node name="UpButton" parent="Screens/StartScreen/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../WestPath/Camera2D")
 
-[node name="RightButton" parent="Screen_13/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_14/Camera2D")
+[node name="RightButton" parent="Screens/StartScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../GateScreen/Camera2D")
 
-[node name="Screen_1" parent="." instance=ExtResource("2_3fk57")]
-
-[node name="RightButton" parent="Screen_1/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_2/Camera2D")
-
-[node name="DownButton" parent="Screen_1/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_5/Camera2D")
-
-[node name="Screen_2" parent="." instance=ExtResource("2_sbpq0")]
+[node name="BackpackScreen" parent="Screens" instance=ExtResource("2_sbpq0")]
 position = Vector2(1459, 1)
 
-[node name="LeftButton" parent="Screen_2/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_1/Camera2D")
+[node name="LeftButton" parent="Screens/BackpackScreen/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
-[node name="RightButton" parent="Screen_2/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_3/Camera2D")
+[node name="RightButton" parent="Screens/BackpackScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
-[node name="DownButton" parent="Screen_2/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+[node name="DownButton" parent="Screens/BackpackScreen/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_6/Camera2D")
 
-[node name="Screen_3" parent="." instance=ExtResource("3_w0id4")]
-position = Vector2(3011, -3)
-
-[node name="LeftButton" parent="Screen_3/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_2/Camera2D")
-
-[node name="RightButton" parent="Screen_3/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_4/Camera2D")
-
-[node name="DownButton" parent="Screen_3/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_7/Camera2D")
-
-[node name="Screen_4" parent="." instance=ExtResource("4_5u7a3")]
-position = Vector2(4590, -14)
-
-[node name="LeftButton" parent="Screen_4/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_3/Camera2D")
-
-[node name="DownButton" parent="Screen_4/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_8/Camera2D")
-
-[node name="Screen_5" parent="." instance=ExtResource("5_cuak0")]
+[node name="GasScreen" parent="Screens" instance=ExtResource("5_cuak0")]
 position = Vector2(-1585, 1540)
 
-[node name="RightButton" parent="Screen_5/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_9/Camera2D")
+[node name="RightButton" parent="Screens/GasScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../WestPath/Camera2D")
 
-[node name="Screen_6" parent="." instance=ExtResource("6_2y53t")]
+[node name="Screen_6" parent="Screens" instance=ExtResource("6_2y53t")]
 position = Vector2(1465, 748)
 
-[node name="LeftButton" parent="Screen_6/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_5/Camera2D")
+[node name="LeftButton" parent="Screens/Screen_6/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../GasScreen/Camera2D")
 
-[node name="UpButton" parent="Screen_6/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_2/Camera2D")
+[node name="UpButton" parent="Screens/Screen_6/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../BackpackScreen/Camera2D")
 
-[node name="RightButton" parent="Screen_6/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_7/Camera2D")
+[node name="RightButton" parent="Screens/Screen_6/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
-[node name="DownButton" parent="Screen_6/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_10/Camera2D")
+[node name="DownButton" parent="Screens/Screen_6/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
-[node name="Screen_7" parent="." instance=ExtResource("7_ahdpt")]
-position = Vector2(3026, 767)
-
-[node name="LeftButton" parent="Screen_7/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_6/Camera2D")
-
-[node name="UpButton" parent="Screen_7/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_3/Camera2D")
-
-[node name="RightButton" parent="Screen_7/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_8/Camera2D")
-
-[node name="DownButton" parent="Screen_7/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_11/Camera2D")
-
-[node name="Screen_8" parent="." instance=ExtResource("8_6w8ps")]
-position = Vector2(4564, 767)
-
-[node name="LeftButton" parent="Screen_8/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_7/Camera2D")
-
-[node name="UpButton" parent="Screen_8/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_4/Camera2D")
-
-[node name="DownButton" parent="Screen_8/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_12/Camera2D")
-
-[node name="Screen_9" parent="." instance=ExtResource("9_y5m01")]
+[node name="WestPath" parent="Screens" instance=ExtResource("9_y5m01")]
 position = Vector2(-13, 1543)
 
-[node name="LeftButton" parent="Screen_9/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_5/Camera2D")
+[node name="LeftButton" parent="Screens/WestPath/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../GasScreen/Camera2D")
 
-[node name="UpButton" parent="Screen_9/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_5/Camera2D")
+[node name="UpButton" parent="Screens/WestPath/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../GasScreen/Camera2D")
 
-[node name="RightButton" parent="Screen_9/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_10/Camera2D")
+[node name="RightButton" parent="Screens/WestPath/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
-[node name="DownButton" parent="Screen_9/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_13/Camera2D")
+[node name="DownButton" parent="Screens/WestPath/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../StartScreen/Camera2D")
 
-[node name="Screen_10" parent="." instance=ExtResource("10_hpdqs")]
+[node name="CarScreen" parent="Screens" instance=ExtResource("10_hpdqs")]
 position = Vector2(1483, 1551)
 
-[node name="LeftButton" parent="Screen_10/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_9/Camera2D")
+[node name="LeftButton" parent="Screens/CarScreen/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../WestPath/Camera2D")
 
-[node name="UpButton" parent="Screen_10/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+[node name="UpButton" parent="Screens/CarScreen/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_6/Camera2D")
 
-[node name="RightButton" parent="Screen_10/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_11/Camera2D")
+[node name="RightButton" parent="Screens/CarScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../EastPath/Camera2D")
 
-[node name="DownButton" parent="Screen_10/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_14/Camera2D")
+[node name="DownButton" parent="Screens/CarScreen/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../GateScreen/Camera2D")
 
-[node name="CarObject" parent="Screen_10" index="3" node_paths=PackedStringArray("audioManager")]
-audioManager = NodePath("../../AudioManager")
+[node name="CarObject" parent="Screens/CarScreen" index="3" node_paths=PackedStringArray("audioManager")]
+audioManager = NodePath("../../../AudioManager")
 
-[node name="PlayerInventory" parent="Screen_10" index="4"]
+[node name="PlayerInventory" parent="Screens/CarScreen" index="4"]
 itemButtonEntries = {
-"Gas": NodePath("../../Screen_5/Interactable/TextureButton"),
-"Key": NodePath("../../Screen_2/Interactable/TextureButton"),
-"Tire": NodePath("../../Screen_12/Interactable/TextureButton")
+"Gas": NodePath("../../GasScreen/Interactable/TextureButton"),
+"Key": NodePath("../../BackpackScreen/Interactable/TextureButton"),
+"Tire": NodePath("../../TireScreen/Interactable/TextureButton")
 }
 
-[node name="Screen_11" parent="." instance=ExtResource("11_3ttlc")]
+[node name="EastPath" parent="Screens" instance=ExtResource("11_3ttlc")]
 position = Vector2(3075, 1564)
 
-[node name="LeftButton" parent="Screen_11/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_10/Camera2D")
+[node name="LeftButton" parent="Screens/EastPath/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
-[node name="UpButton" parent="Screen_11/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_7/Camera2D")
+[node name="UpButton" parent="Screens/EastPath/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
-[node name="RightButton" parent="Screen_11/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_12/Camera2D")
+[node name="RightButton" parent="Screens/EastPath/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../TireScreen/Camera2D")
 
-[node name="DownButton" parent="Screen_11/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_15/Camera2D")
+[node name="DownButton" parent="Screens/EastPath/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
-[node name="Screen_12" parent="." instance=ExtResource("12_2h6ax")]
+[node name="TireScreen" parent="Screens" instance=ExtResource("12_2h6ax")]
 position = Vector2(4555, 1570)
 
-[node name="LeftButton" parent="Screen_12/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_11/Camera2D")
+[node name="LeftButton" parent="Screens/TireScreen/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../EastPath/Camera2D")
 
-[node name="UpButton" parent="Screen_12/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_8/Camera2D")
+[node name="UpButton" parent="Screens/TireScreen/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
-[node name="DownButton" parent="Screen_12/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_16/Camera2D")
+[node name="DownButton" parent="Screens/TireScreen/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
-[node name="Screen_14" parent="." instance=ExtResource("14_kg4vh")]
+[node name="GateScreen" parent="Screens" instance=ExtResource("14_kg4vh")]
 position = Vector2(1426, 2402)
 
-[node name="LeftButton" parent="Screen_14/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_13/Camera2D")
+[node name="LeftButton" parent="Screens/GateScreen/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../StartScreen/Camera2D")
 
-[node name="UpButton" parent="Screen_14/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_10/Camera2D")
+[node name="UpButton" parent="Screens/GateScreen/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
-[node name="RightButton" parent="Screen_14/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_15/Camera2D")
-
-[node name="Screen_15" parent="." instance=ExtResource("15_j1075")]
-position = Vector2(3069, 2385)
-
-[node name="The Buttons" parent="Screen_15" index="3"]
-left = false
-
-[node name="LeftButton" parent="Screen_15/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_14/Camera2D")
-
-[node name="UpButton" parent="Screen_15/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_11/Camera2D")
-
-[node name="RightButton" parent="Screen_15/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_16/Camera2D")
-
-[node name="Screen_16" parent="." instance=ExtResource("16_btmca")]
-position = Vector2(4543, 2355)
-
-[node name="LeftButton" parent="Screen_16/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_15/Camera2D")
-
-[node name="UpButton" parent="Screen_16/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("../../../Screen_12/Camera2D")
+[node name="RightButton" parent="Screens/GateScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
+DestinationCamera = NodePath("")
 
 [node name="FlashLightOccluder" parent="." instance=ExtResource("17_4t7oy")]
 modulate = Color(1, 1, 1, 0)
@@ -236,12 +151,12 @@ startOnReady = true
 
 [node name="GetsDarkDialogue" parent="." node_paths=PackedStringArray("triggerButton") instance=ExtResource("18_2sk01")]
 DialogueText = Array[String](["Wow! Now its really dark!", "You set your backpack down and pull out your flashlight."])
-triggerButton = NodePath("../Screen_14/The Buttons/UpButton")
+triggerButton = NodePath("../Screens/GateScreen/The Buttons/UpButton")
 
 [node name="TriggerFlashlight" type="Node2D" parent="." node_paths=PackedStringArray("button", "flashlightNode")]
 position = Vector2(1480, 2361)
 script = ExtResource("19_t0575")
-button = NodePath("../Screen_14/The Buttons/UpButton")
+button = NodePath("../Screens/GateScreen/The Buttons/UpButton")
 flashlightNode = NodePath("../FlashLightOccluder")
 
 [node name="AudioManager" type="Node2D" parent="."]
@@ -273,118 +188,76 @@ text = "Hello"
 script = ExtResource("22_o01a2")
 events = Array[Dictionary]([{
 "songIndex": 2,
-"trigger": NodePath("../../Screen_10/CarObject/Interactable/TextureButton")
+"trigger": NodePath("../../Screens/CarScreen/CarObject/Interactable/TextureButton")
 }])
 
-[editable path="Screen_13"]
-[editable path="Screen_13/The Buttons"]
-[editable path="Screen_13/The Buttons/LeftButton"]
-[editable path="Screen_13/The Buttons/UpButton"]
-[editable path="Screen_13/The Buttons/RightButton"]
-[editable path="Screen_13/The Buttons/DownButton"]
-[editable path="Screen_13/InfoButton"]
-[editable path="Screen_13/InfoButton2"]
-[editable path="Screen_13/InfoButton3"]
-[editable path="Screen_1"]
-[editable path="Screen_1/The Buttons"]
-[editable path="Screen_1/The Buttons/LeftButton"]
-[editable path="Screen_1/The Buttons/UpButton"]
-[editable path="Screen_1/The Buttons/RightButton"]
-[editable path="Screen_1/The Buttons/DownButton"]
-[editable path="Screen_2"]
-[editable path="Screen_2/The Buttons"]
-[editable path="Screen_2/The Buttons/LeftButton"]
-[editable path="Screen_2/The Buttons/UpButton"]
-[editable path="Screen_2/The Buttons/RightButton"]
-[editable path="Screen_2/The Buttons/DownButton"]
-[editable path="Screen_2/Interactable"]
-[editable path="Screen_2/InfoButton"]
-[editable path="Screen_3"]
-[editable path="Screen_3/The Buttons"]
-[editable path="Screen_3/The Buttons/LeftButton"]
-[editable path="Screen_3/The Buttons/UpButton"]
-[editable path="Screen_3/The Buttons/RightButton"]
-[editable path="Screen_3/The Buttons/DownButton"]
-[editable path="Screen_4"]
-[editable path="Screen_4/The Buttons"]
-[editable path="Screen_4/The Buttons/LeftButton"]
-[editable path="Screen_4/The Buttons/UpButton"]
-[editable path="Screen_4/The Buttons/RightButton"]
-[editable path="Screen_4/The Buttons/DownButton"]
-[editable path="Screen_5"]
-[editable path="Screen_5/The Buttons"]
-[editable path="Screen_5/The Buttons/LeftButton"]
-[editable path="Screen_5/The Buttons/UpButton"]
-[editable path="Screen_5/The Buttons/RightButton"]
-[editable path="Screen_5/The Buttons/DownButton"]
-[editable path="Screen_5/Interactable"]
-[editable path="Screen_6"]
-[editable path="Screen_6/The Buttons"]
-[editable path="Screen_6/The Buttons/LeftButton"]
-[editable path="Screen_6/The Buttons/UpButton"]
-[editable path="Screen_6/The Buttons/RightButton"]
-[editable path="Screen_6/The Buttons/DownButton"]
-[editable path="Screen_6/InfoButton"]
-[editable path="Screen_7"]
-[editable path="Screen_7/The Buttons"]
-[editable path="Screen_7/The Buttons/LeftButton"]
-[editable path="Screen_7/The Buttons/UpButton"]
-[editable path="Screen_7/The Buttons/RightButton"]
-[editable path="Screen_7/The Buttons/DownButton"]
-[editable path="Screen_8"]
-[editable path="Screen_8/The Buttons"]
-[editable path="Screen_8/The Buttons/LeftButton"]
-[editable path="Screen_8/The Buttons/UpButton"]
-[editable path="Screen_8/The Buttons/RightButton"]
-[editable path="Screen_8/The Buttons/DownButton"]
-[editable path="Screen_9"]
-[editable path="Screen_9/The Buttons"]
-[editable path="Screen_9/The Buttons/LeftButton"]
-[editable path="Screen_9/The Buttons/UpButton"]
-[editable path="Screen_9/The Buttons/RightButton"]
-[editable path="Screen_9/The Buttons/DownButton"]
-[editable path="Screen_9/InfoButton"]
-[editable path="Screen_10"]
-[editable path="Screen_10/The Buttons"]
-[editable path="Screen_10/The Buttons/LeftButton"]
-[editable path="Screen_10/The Buttons/UpButton"]
-[editable path="Screen_10/The Buttons/RightButton"]
-[editable path="Screen_10/The Buttons/DownButton"]
-[editable path="Screen_10/CarObject"]
-[editable path="Screen_10/CarObject/Interactable"]
-[editable path="Screen_11"]
-[editable path="Screen_11/InfoButton"]
-[editable path="Screen_11/The Buttons"]
-[editable path="Screen_11/The Buttons/LeftButton"]
-[editable path="Screen_11/The Buttons/UpButton"]
-[editable path="Screen_11/The Buttons/RightButton"]
-[editable path="Screen_11/The Buttons/DownButton"]
-[editable path="Screen_12"]
-[editable path="Screen_12/The Buttons"]
-[editable path="Screen_12/The Buttons/LeftButton"]
-[editable path="Screen_12/The Buttons/UpButton"]
-[editable path="Screen_12/The Buttons/RightButton"]
-[editable path="Screen_12/The Buttons/DownButton"]
-[editable path="Screen_12/Interactable"]
-[editable path="Screen_12/InfoButton"]
-[editable path="Screen_14"]
-[editable path="Screen_14/The Buttons"]
-[editable path="Screen_14/The Buttons/LeftButton"]
-[editable path="Screen_14/The Buttons/UpButton"]
-[editable path="Screen_14/The Buttons/RightButton"]
-[editable path="Screen_14/The Buttons/DownButton"]
-[editable path="Screen_14/BaseMiniGame"]
-[editable path="Screen_14/InfoButton"]
-[editable path="Screen_14/MinigameButton"]
-[editable path="Screen_15"]
-[editable path="Screen_15/The Buttons"]
-[editable path="Screen_15/The Buttons/LeftButton"]
-[editable path="Screen_15/The Buttons/UpButton"]
-[editable path="Screen_15/The Buttons/RightButton"]
-[editable path="Screen_15/The Buttons/DownButton"]
-[editable path="Screen_16"]
-[editable path="Screen_16/The Buttons"]
-[editable path="Screen_16/The Buttons/LeftButton"]
-[editable path="Screen_16/The Buttons/UpButton"]
-[editable path="Screen_16/The Buttons/RightButton"]
-[editable path="Screen_16/The Buttons/DownButton"]
+[editable path="Screens/StartScreen"]
+[editable path="Screens/StartScreen/The Buttons"]
+[editable path="Screens/StartScreen/The Buttons/LeftButton"]
+[editable path="Screens/StartScreen/The Buttons/UpButton"]
+[editable path="Screens/StartScreen/The Buttons/RightButton"]
+[editable path="Screens/StartScreen/The Buttons/DownButton"]
+[editable path="Screens/StartScreen/InfoButton"]
+[editable path="Screens/StartScreen/InfoButton2"]
+[editable path="Screens/StartScreen/InfoButton3"]
+[editable path="Screens/BackpackScreen"]
+[editable path="Screens/BackpackScreen/The Buttons"]
+[editable path="Screens/BackpackScreen/The Buttons/LeftButton"]
+[editable path="Screens/BackpackScreen/The Buttons/UpButton"]
+[editable path="Screens/BackpackScreen/The Buttons/RightButton"]
+[editable path="Screens/BackpackScreen/The Buttons/DownButton"]
+[editable path="Screens/BackpackScreen/Interactable"]
+[editable path="Screens/BackpackScreen/InfoButton"]
+[editable path="Screens/GasScreen"]
+[editable path="Screens/GasScreen/The Buttons"]
+[editable path="Screens/GasScreen/The Buttons/LeftButton"]
+[editable path="Screens/GasScreen/The Buttons/UpButton"]
+[editable path="Screens/GasScreen/The Buttons/RightButton"]
+[editable path="Screens/GasScreen/The Buttons/DownButton"]
+[editable path="Screens/GasScreen/Interactable"]
+[editable path="Screens/Screen_6"]
+[editable path="Screens/Screen_6/The Buttons"]
+[editable path="Screens/Screen_6/The Buttons/LeftButton"]
+[editable path="Screens/Screen_6/The Buttons/UpButton"]
+[editable path="Screens/Screen_6/The Buttons/RightButton"]
+[editable path="Screens/Screen_6/The Buttons/DownButton"]
+[editable path="Screens/Screen_6/InfoButton"]
+[editable path="Screens/WestPath"]
+[editable path="Screens/WestPath/The Buttons"]
+[editable path="Screens/WestPath/The Buttons/LeftButton"]
+[editable path="Screens/WestPath/The Buttons/UpButton"]
+[editable path="Screens/WestPath/The Buttons/RightButton"]
+[editable path="Screens/WestPath/The Buttons/DownButton"]
+[editable path="Screens/WestPath/InfoButton"]
+[editable path="Screens/CarScreen"]
+[editable path="Screens/CarScreen/The Buttons"]
+[editable path="Screens/CarScreen/The Buttons/LeftButton"]
+[editable path="Screens/CarScreen/The Buttons/UpButton"]
+[editable path="Screens/CarScreen/The Buttons/RightButton"]
+[editable path="Screens/CarScreen/The Buttons/DownButton"]
+[editable path="Screens/CarScreen/CarObject"]
+[editable path="Screens/CarScreen/CarObject/Interactable"]
+[editable path="Screens/EastPath"]
+[editable path="Screens/EastPath/InfoButton"]
+[editable path="Screens/EastPath/The Buttons"]
+[editable path="Screens/EastPath/The Buttons/LeftButton"]
+[editable path="Screens/EastPath/The Buttons/UpButton"]
+[editable path="Screens/EastPath/The Buttons/RightButton"]
+[editable path="Screens/EastPath/The Buttons/DownButton"]
+[editable path="Screens/TireScreen"]
+[editable path="Screens/TireScreen/The Buttons"]
+[editable path="Screens/TireScreen/The Buttons/LeftButton"]
+[editable path="Screens/TireScreen/The Buttons/UpButton"]
+[editable path="Screens/TireScreen/The Buttons/RightButton"]
+[editable path="Screens/TireScreen/The Buttons/DownButton"]
+[editable path="Screens/TireScreen/Interactable"]
+[editable path="Screens/TireScreen/InfoButton"]
+[editable path="Screens/GateScreen"]
+[editable path="Screens/GateScreen/The Buttons"]
+[editable path="Screens/GateScreen/The Buttons/LeftButton"]
+[editable path="Screens/GateScreen/The Buttons/UpButton"]
+[editable path="Screens/GateScreen/The Buttons/RightButton"]
+[editable path="Screens/GateScreen/The Buttons/DownButton"]
+[editable path="Screens/GateScreen/BaseMiniGame"]
+[editable path="Screens/GateScreen/InfoButton"]
+[editable path="Screens/GateScreen/MinigameButton"]

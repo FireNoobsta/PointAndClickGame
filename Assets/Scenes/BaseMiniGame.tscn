@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b570g85md0jix"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_1ho0p"]
-[ext_resource type="Texture2D" uid="uid://df0fw0qijsldi" path="res://Assets/Placeholders/gate.png" id="1_lrquv"]
-[ext_resource type="Texture2D" uid="uid://cwo303xrst4dc" path="res://Assets/Placeholders/latchHook.png" id="1_ptw8o"]
+[ext_resource type="Texture2D" uid="uid://df0fw0qijsldi" path="res://Assets/Textures/Sprites/gate.png" id="1_lrquv"]
+[ext_resource type="Texture2D" uid="uid://cwo303xrst4dc" path="res://Assets/Textures/Sprites/latchHook.png" id="1_ptw8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_objsg"]
 
@@ -48,7 +48,6 @@ mass = 0.001
 continuous_cd = 1
 script = ExtResource("1_1ho0p")
 maxForce = 100.0
-maxDistance = 5.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Latch"]
 position = Vector2(-124, -17)

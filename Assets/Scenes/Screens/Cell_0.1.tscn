@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dio3f6626x550"]
+
+[ext_resource type="Texture2D" uid="uid://csqvuw1obd6wb" path="res://Assets/Textures/BackgroundPhotos/Bushes.png" id="1_o783l"]
+[ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_1hslv"]
+[ext_resource type="SpriteFrames" uid="uid://mm2x5ynblgmr" path="res://Assets/Textures/SpriteFrames/Funny_Walk.tres" id="2_3p1xc"]
+[ext_resource type="Texture2D" uid="uid://c4ryg0gxfoodv" path="res://Assets/Textures/BackgroundPhotos/Bushes_Sign_Isolated.png" id="3_3gh80"]
+[ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="5_cd2cn"]
+
+[node name="Screen_9" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 5
+position = Vector2(0, -5.96046e-08)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.11771, 1.00001)
+scale = Vector2(5.44538, 5.44538)
+texture = ExtResource("1_o783l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-150, 93)
+scale = Vector2(2.37778, 2.37778)
+sprite_frames = ExtResource("2_3p1xc")
+autoplay = "default"
+frame_progress = 0.706926
+
+[node name="Background2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.11771, 1.00001)
+scale = Vector2(5.44538, 5.44538)
+texture = ExtResource("3_3gh80")
+
+[node name="The Buttons" parent="." instance=ExtResource("2_1hslv")]
+up = false
+down = false
+
+[node name="InfoButton" parent="." instance=ExtResource("5_cd2cn")]
+offset_left = -338.0
+offset_top = 22.0
+offset_right = 38.0
+offset_bottom = 190.0
+DialogueText = Array[String](["It's out of your control", "Don't let it get to you"])
+
+[node name="Label" parent="InfoButton" index="0"]
+offset_left = 122.0
+offset_top = 180.0
+offset_right = 198.0
+offset_bottom = 209.0
+text = "Sus"
+
+[editable path="InfoButton"]

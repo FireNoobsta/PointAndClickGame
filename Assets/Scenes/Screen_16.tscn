@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://oqqjfjeubw7p"]
 
-[ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Placeholders/river.png" id="1_xobr5"]
+[ext_resource type="Texture2D" uid="uid://c00oy33widjbp" path="res://Assets/Textures/BackgroundPhotos/river.png" id="1_xobr5"]
 [ext_resource type="PackedScene" uid="uid://drbsf16nu7rwg" path="res://Assets/Scenes/the_buttons.tscn" id="2_y3wrt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8n4rf"]
