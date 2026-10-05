@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://cicw4h1s1r0e7"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_hx5y1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Socket_Area.gd" id="2_g400n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5uaf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcftq"]
+size = Vector2(400, 50)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_eny3w"]
+size = Vector2(400, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6eaa2"]
+radius = 13.8924
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ri7dp"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejycu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_antjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqk46"]
+size = Vector2(813, 20)
+
+[node name="BaseMiniGame" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.415, 1.415)
+
+[node name="PivotPoint" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotPoint"]
+shape = SubResource("CircleShape2D_q5uaf")
+disabled = true
+
+[node name="Wrench" type="RigidBody2D" parent="."]
+position = Vector2(0, 72)
+mass = 0.001
+script = ExtResource("1_hx5y1")
+maxForce = 10000.0
+maxDistance = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wrench"]
+position = Vector2(-92, 0)
+scale = Vector2(0.537315, 0.537315)
+shape = SubResource("RectangleShape2D_jcftq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wrench"]
+position = Vector2(-92, 0)
+scale = Vector2(0.543554, 0.543554)
+texture = SubResource("PlaceholderTexture2D_eny3w")
+
+[node name="TextureButton" type="TextureButton" parent="Wrench"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -15.0
+offset_right = 209.65
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5307, 0.5707)
+
+[node name="Area2D" type="Area2D" parent="Wrench"]
+position = Vector2(1.52588e-05, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wrench/Area2D"]
+shape = SubResource("CircleShape2D_6eaa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wrench/Area2D"]
+modulate = Color(0.000410652, 0.178394, 0.630137, 1)
+texture = SubResource("PlaceholderTexture2D_ri7dp")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 2)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_g400n")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Area2D"]
+node_a = NodePath("../StaticBody2D2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ejycu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+position = Vector2(3.57628e-07, -1.90735e-06)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_antjg")
+
+[node name="Bounds" type="Node2D" parent="."]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bounds"]
+position = Vector2(-2, -243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D2"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_sqk46")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bounds"]
+position = Vector2(0, 238)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_sqk46")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Bounds"]
+position = Vector2(414, 0)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D3"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_sqk46")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Bounds"]
+position = Vector2(-417, 0)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D4"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_sqk46")

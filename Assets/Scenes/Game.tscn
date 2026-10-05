@@ -32,12 +32,6 @@ DestinationCamera = NodePath("../../../GateScreen/Camera2D")
 [node name="BackpackScreen" parent="Screens" instance=ExtResource("2_sbpq0")]
 position = Vector2(1459, 1)
 
-[node name="LeftButton" parent="Screens/BackpackScreen/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
-
-[node name="RightButton" parent="Screens/BackpackScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
-
 [node name="DownButton" parent="Screens/BackpackScreen/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_6/Camera2D")
 
@@ -55,9 +49,6 @@ DestinationCamera = NodePath("../../../GasScreen/Camera2D")
 
 [node name="UpButton" parent="Screens/Screen_6/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../BackpackScreen/Camera2D")
-
-[node name="RightButton" parent="Screens/Screen_6/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
 
 [node name="DownButton" parent="Screens/Screen_6/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../CarScreen/Camera2D")
@@ -108,26 +99,14 @@ position = Vector2(3075, 1564)
 [node name="LeftButton" parent="Screens/EastPath/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
-[node name="UpButton" parent="Screens/EastPath/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
-
 [node name="RightButton" parent="Screens/EastPath/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../TireScreen/Camera2D")
-
-[node name="DownButton" parent="Screens/EastPath/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
 
 [node name="TireScreen" parent="Screens" instance=ExtResource("12_2h6ax")]
 position = Vector2(4555, 1570)
 
 [node name="LeftButton" parent="Screens/TireScreen/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../EastPath/Camera2D")
-
-[node name="UpButton" parent="Screens/TireScreen/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
-
-[node name="DownButton" parent="Screens/TireScreen/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
 
 [node name="GateScreen" parent="Screens" instance=ExtResource("14_kg4vh")]
 position = Vector2(1426, 2402)
@@ -138,8 +117,11 @@ DestinationCamera = NodePath("../../../StartScreen/Camera2D")
 [node name="UpButton" parent="Screens/GateScreen/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
-[node name="RightButton" parent="Screens/GateScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
-DestinationCamera = NodePath("")
+[node name="RigidBody2D" parent="Screens/GateScreen/BaseMiniGame" index="1"]
+maxlinearDamp = 10.0
+
+[node name="Latch" parent="Screens/GateScreen/BaseMiniGame" index="2"]
+maxlinearDamp = 10.0
 
 [node name="FlashLightOccluder" parent="." instance=ExtResource("17_4t7oy")]
 modulate = Color(1, 1, 1, 0)

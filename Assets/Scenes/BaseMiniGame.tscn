@@ -25,7 +25,6 @@ position = Vector2(-27, -129)
 mass = 0.001
 lock_rotation = true
 script = ExtResource("1_1ho0p")
-maxForce = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_objsg")
@@ -47,7 +46,6 @@ position = Vector2(160, -113)
 mass = 0.001
 continuous_cd = 1
 script = ExtResource("1_1ho0p")
-maxForce = 100.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Latch"]
 position = Vector2(-124, -17)
