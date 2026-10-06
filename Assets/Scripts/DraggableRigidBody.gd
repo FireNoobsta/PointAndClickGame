@@ -23,6 +23,7 @@ func _ready() -> void:
 	logOfMaxDist = log(maxDistance)
 	lineIndicator = Line2D.new()
 	self.add_child(lineIndicator)
+	lineIndicator.width = 5
 	#print("default linear damp: " + str(defaultLinearDamp))
 
 func OnButtonDown():

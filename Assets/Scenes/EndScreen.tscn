@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://chjcqgfrr65om" path="res://Assets/Scenes/CutsceneDialogue.tscn" id="1_7wq41"]
 [ext_resource type="Script" path="res://Assets/Scripts/RestartGame.gd" id="1_kh5i1"]
 [ext_resource type="PackedScene" uid="uid://ce0cok5w8seda" path="res://Assets/Scenes/InfoButton.tscn" id="2_p1rub"]
-[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/new_theme.tres" id="2_x5rxe"]
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/Weird_Label_Theme.tres" id="2_x5rxe"]
 
 [node name="EndScreen" type="Node2D"]
 script = ExtResource("1_kh5i1")

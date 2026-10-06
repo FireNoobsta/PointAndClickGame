@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce0cok5w8seda"]
 
-[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/new_theme.tres" id="1_4a3e5"]
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/Weird_Label_Theme.tres" id="1_4a3e5"]
 [ext_resource type="Script" path="res://Assets/Scripts/Interactable.gd" id="2_ck7rg"]
 [ext_resource type="Script" path="res://Assets/Scripts/RevealWithHover.gd" id="2_t2qf5"]
 

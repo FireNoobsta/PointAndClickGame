@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cicw4h1s1r0e7"]
+[gd_scene load_steps=16 format=3 uid="uid://cicw4h1s1r0e7"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_hx5y1"]
 [ext_resource type="Script" path="res://Assets/Scripts/Socket_Area.gd" id="2_g400n"]
+[ext_resource type="Script" path="res://Assets/Scripts/socket_watcher.gd" id="2_gci8u"]
 [ext_resource type="Script" path="res://Assets/Scripts/kill_box.gd" id="3_iegqy"]
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/Weird_Label_Theme.tres" id="4_r6a5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q5uaf"]
 
@@ -26,12 +28,12 @@ size = Vector2(14, 16)
 size = Vector2(849, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ycjw"]
-size = Vector2(535, 50)
+size = Vector2(598, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yguss"]
-size = Vector2(540, 55.0003)
+size = Vector2(592, 55.0003)
 
-[node name="BaseMiniGame" type="Node2D"]
+[node name="TireMiniGame" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.415, 1.415)
@@ -45,9 +47,11 @@ disabled = true
 [node name="Wrench" type="RigidBody2D" parent="."]
 position = Vector2(0, 72)
 mass = 0.001
+can_sleep = false
 script = ExtResource("1_hx5y1")
-maxForce = 5000.0
+maxForce = 1000.0
 maxDistance = 100.0
+maxlinearDamp = 250.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wrench"]
 position = Vector2(-92, 0)
@@ -85,8 +89,12 @@ shape = SubResource("CircleShape2D_6eaa2")
 modulate = Color(0.000410652, 0.178394, 0.630137, 1)
 texture = SubResource("PlaceholderTexture2D_ri7dp")
 
+[node name="SocketWatcher" type="Node2D" parent="." node_paths=PackedStringArray("sockets")]
+script = ExtResource("2_gci8u")
+sockets = [NodePath("../Socket1"), NodePath("../Socket2"), NodePath("../Socket3"), NodePath("../Socket4")]
+
 [node name="Socket1" type="Area2D" parent="."]
-position = Vector2(1, 2)
+position = Vector2(-35, 9)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_g400n")
@@ -105,13 +113,73 @@ position = Vector2(3.57628e-07, -1.90735e-06)
 scale = Vector2(20, 20)
 texture = SubResource("PlaceholderTexture2D_antjg")
 
+[node name="Socket2" type="Area2D" parent="."]
+position = Vector2(-35, -55)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_g400n")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Socket2"]
+node_a = NodePath("../StaticBody2D2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Socket2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Socket2"]
+shape = SubResource("RectangleShape2D_ejycu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket2"]
+modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+position = Vector2(3.57628e-07, -1.90735e-06)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_antjg")
+
+[node name="Socket3" type="Area2D" parent="."]
+position = Vector2(36, -55)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_g400n")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Socket3"]
+node_a = NodePath("../StaticBody2D2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Socket3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Socket3"]
+shape = SubResource("RectangleShape2D_ejycu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket3"]
+modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+position = Vector2(3.57628e-07, -1.90735e-06)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_antjg")
+
+[node name="Socket4" type="Area2D" parent="."]
+position = Vector2(37, 9)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_g400n")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Socket4"]
+node_a = NodePath("../StaticBody2D2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Socket4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Socket4"]
+shape = SubResource("RectangleShape2D_ejycu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Socket4"]
+modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+position = Vector2(3.57628e-07, -1.90735e-06)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_antjg")
+
 [node name="Bounds" type="Node2D" parent="."]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Bounds"]
 position = Vector2(-2, -243)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D2"]
-position = Vector2(-0.5, -13.5)
+position = Vector2(0, -56)
 shape = SubResource("RectangleShape2D_sqk46")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Bounds"]
@@ -126,7 +194,7 @@ position = Vector2(414, 0)
 rotation = -1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D3"]
-position = Vector2(0.500008, 17)
+position = Vector2(32.0001, 16.9999)
 shape = SubResource("RectangleShape2D_5ycjw")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Bounds"]
@@ -134,8 +202,27 @@ position = Vector2(-417, 0)
 rotation = -1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D4"]
-position = Vector2(0.999875, -17.5002)
+position = Vector2(26.9999, -17.5002)
 shape = SubResource("RectangleShape2D_yguss")
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 109.0
+offset_top = -50.0
+offset_right = 319.0
+offset_bottom = -12.0
+theme = ExtResource("4_r6a5b")
+theme_type_variation = &"GoalButton"
+
+[node name="Label" type="Label" parent="ContinueButton"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 206.0
+offset_bottom = 34.0
+theme = ExtResource("4_r6a5b")
+theme_type_variation = &"GoalLabel"
+text = "Continue!"
 
 [node name="KillBox" type="Area2D" parent="."]
 script = ExtResource("3_iegqy")

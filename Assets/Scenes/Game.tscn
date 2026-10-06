@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://tjtgf8ple4xl"]
+[gd_scene load_steps=17 format=3 uid="uid://tjtgf8ple4xl"]
 
 [ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screens/Cell_1.3.tscn" id="2_sbpq0"]
 [ext_resource type="PackedScene" uid="uid://cg0h4egdw076t" path="res://Assets/Scenes/Screens/Cell_-1.1.tscn" id="5_cuak0"]
 [ext_resource type="PackedScene" uid="uid://bvh7u1msfnntk" path="res://Assets/Scenes/Screens/Cell_1.2.tscn" id="6_2y53t"]
 [ext_resource type="PackedScene" uid="uid://dio3f6626x550" path="res://Assets/Scenes/Screens/Cell_0.1.tscn" id="9_y5m01"]
 [ext_resource type="PackedScene" uid="uid://bishvv8l4l2ru" path="res://Assets/Scenes/Screens/Cell_1.1.tscn" id="10_hpdqs"]
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/Weird_Label_Theme.tres" id="10_oe62w"]
 [ext_resource type="PackedScene" uid="uid://d2wjavrog2q6w" path="res://Assets/Scenes/Screens/Cell_2.1.tscn" id="11_3ttlc"]
 [ext_resource type="PackedScene" uid="uid://chcjpwinltbta" path="res://Assets/Scenes/Screens/Cell_3.1.tscn" id="12_2h6ax"]
 [ext_resource type="PackedScene" uid="uid://bc2i1qfv1wqyt" path="res://Assets/Scenes/Screens/Cell_0.0.tscn" id="13_ka1bd"]
@@ -35,11 +36,20 @@ position = Vector2(1459, 1)
 [node name="DownButton" parent="Screens/BackpackScreen/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../Screen_6/Camera2D")
 
+[node name="Label" parent="Screens/BackpackScreen/Interactable/TextureButton" index="1"]
+offset_right = 69.0
+
+[node name="Label" parent="Screens/BackpackScreen/InfoButton" index="0"]
+offset_right = 506.0
+
 [node name="GasScreen" parent="Screens" instance=ExtResource("5_cuak0")]
 position = Vector2(-1585, 1540)
 
 [node name="RightButton" parent="Screens/GasScreen/The Buttons" index="2" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../WestPath/Camera2D")
+
+[node name="Label" parent="Screens/GasScreen/Interactable/TextureButton" index="1"]
+offset_right = -22.0
 
 [node name="Screen_6" parent="Screens" instance=ExtResource("6_2y53t")]
 position = Vector2(1465, 748)
@@ -52,6 +62,9 @@ DestinationCamera = NodePath("../../../BackpackScreen/Camera2D")
 
 [node name="DownButton" parent="Screens/Screen_6/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../CarScreen/Camera2D")
+
+[node name="Label" parent="Screens/Screen_6/InfoButton" index="0"]
+offset_right = 263.0
 
 [node name="WestPath" parent="Screens" instance=ExtResource("9_y5m01")]
 position = Vector2(-13, 1543)
@@ -67,6 +80,9 @@ DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
 [node name="DownButton" parent="Screens/WestPath/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../StartScreen/Camera2D")
+
+[node name="Label" parent="Screens/WestPath/InfoButton" index="0"]
+offset_right = 188.0
 
 [node name="CarScreen" parent="Screens" instance=ExtResource("10_hpdqs")]
 position = Vector2(1483, 1551)
@@ -96,6 +112,9 @@ itemButtonEntries = {
 [node name="EastPath" parent="Screens" instance=ExtResource("11_3ttlc")]
 position = Vector2(3075, 1564)
 
+[node name="Label" parent="Screens/EastPath/InfoButton" index="0"]
+offset_right = 360.0
+
 [node name="LeftButton" parent="Screens/EastPath/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
@@ -108,6 +127,9 @@ position = Vector2(4555, 1570)
 [node name="LeftButton" parent="Screens/TireScreen/The Buttons" index="0" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../EastPath/Camera2D")
 
+[node name="Label" parent="Screens/TireScreen/InfoButton" index="0"]
+offset_right = 380.0
+
 [node name="GateScreen" parent="Screens" instance=ExtResource("14_kg4vh")]
 position = Vector2(1426, 2402)
 
@@ -117,11 +139,42 @@ DestinationCamera = NodePath("../../../StartScreen/Camera2D")
 [node name="UpButton" parent="Screens/GateScreen/The Buttons" index="1" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../CarScreen/Camera2D")
 
-[node name="RigidBody2D" parent="Screens/GateScreen/BaseMiniGame" index="1"]
-maxlinearDamp = 10.0
+[node name="LeaveButton" parent="Screens/GateScreen" index="4"]
+offset_left = -292.0
+offset_top = 810.0
+offset_right = -102.0
+offset_bottom = 862.0
+theme = ExtResource("10_oe62w")
+theme_type_variation = &"GoalButton"
+text = "
+"
 
-[node name="Latch" parent="Screens/GateScreen/BaseMiniGame" index="2"]
-maxlinearDamp = 10.0
+[node name="Label" type="Label" parent="Screens/GateScreen/LeaveButton" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -12.0
+offset_right = 87.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"GoalLabel"
+text = "Continue!"
+
+[node name="RigidBody2D" parent="Screens/GateScreen/BaseMiniGame" index="2"]
+maxForce = 1000.0
+maxDistance = 100.0
+
+[node name="Latch" parent="Screens/GateScreen/BaseMiniGame" index="3"]
+maxForce = 1000.0
+maxDistance = 100.0
+
+[node name="Label" parent="Screens/GateScreen/MinigameButton" index="0"]
+theme_override_font_sizes/font_size = 32
 
 [node name="FlashLightOccluder" parent="." instance=ExtResource("17_4t7oy")]
 modulate = Color(1, 1, 1, 0)

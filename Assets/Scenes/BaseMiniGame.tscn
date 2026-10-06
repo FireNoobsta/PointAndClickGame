@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://df0fw0qijsldi" path="res://Assets/Textures/Sprites/gate.png" id="1_lrquv"]
 [ext_resource type="Texture2D" uid="uid://cwo303xrst4dc" path="res://Assets/Textures/Sprites/latchHook.png" id="1_ptw8o"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_objsg"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btedf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_objsg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aomo2"]
 size = Vector2(40.5, 40)
@@ -19,6 +19,13 @@ size = Vector2(40, 40)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-40, -117)
 zoom = Vector2(1.415, 1.415)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(159, -114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_btedf")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(-27, -129)
@@ -59,7 +66,7 @@ texture = ExtResource("1_ptw8o")
 [node name="PinJoint2D" type="PinJoint2D" parent="Latch"]
 position = Vector2(0, 1)
 node_a = NodePath("..")
-node_b = NodePath("../StaticBody2D2")
+node_b = NodePath("../../StaticBody2D2")
 bias = 0.9
 
 [node name="TextureButton" type="TextureButton" parent="Latch"]
@@ -67,13 +74,6 @@ offset_left = -238.0
 offset_top = -69.0
 offset_right = 26.0
 offset_bottom = 27.0
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Latch"]
-position = Vector2(-1, -1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Latch/StaticBody2D2"]
-position = Vector2(1, 2)
-shape = SubResource("RectangleShape2D_btedf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-599, -129)

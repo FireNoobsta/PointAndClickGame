@@ -1,4 +1,5 @@
 extends Area2D
+class_name SocketArea
 
 @onready var joint : PinJoint2D = $PinJoint2D
 
@@ -6,10 +7,10 @@ var turnAmount : float = 0.0
 var isTight : bool = false
 var isWrenchAttached : bool = false
 var wrench : RigidBody2D
+signal gotTightened
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
 	self.area_entered.connect(_on_wrench_enter_socket)
 
 
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 			isWrenchAttached = false
 			joint.node_b = ""
 			isTight = true
+			gotTightened.emit()
 
 func _on_wrench_enter_socket(area: Area2D):
 	pass
