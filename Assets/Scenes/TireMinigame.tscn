@@ -89,9 +89,10 @@ shape = SubResource("CircleShape2D_6eaa2")
 modulate = Color(0.000410652, 0.178394, 0.630137, 1)
 texture = SubResource("PlaceholderTexture2D_ri7dp")
 
-[node name="SocketWatcher" type="Node2D" parent="." node_paths=PackedStringArray("sockets")]
+[node name="SocketWatcher" type="Node2D" parent="." node_paths=PackedStringArray("sockets", "continueButton")]
 script = ExtResource("2_gci8u")
 sockets = [NodePath("../Socket1"), NodePath("../Socket2"), NodePath("../Socket3"), NodePath("../Socket4")]
+continueButton = NodePath("../ContinueButton")
 
 [node name="Socket1" type="Area2D" parent="."]
 position = Vector2(-35, 9)
@@ -206,20 +207,27 @@ position = Vector2(26.9999, -17.5002)
 shape = SubResource("RectangleShape2D_yguss")
 
 [node name="ContinueButton" type="Button" parent="."]
-offset_left = 109.0
-offset_top = -50.0
-offset_right = 319.0
-offset_bottom = -12.0
+offset_left = 115.0
+offset_top = -31.0
+offset_right = 325.0
+offset_bottom = 7.0
 theme = ExtResource("4_r6a5b")
 theme_type_variation = &"GoalButton"
 
 [node name="Label" type="Label" parent="ContinueButton"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 3.0
-offset_top = 5.0
-offset_right = 206.0
-offset_bottom = 34.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -14.5
+offset_right = 88.5
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("4_r6a5b")
 theme_type_variation = &"GoalLabel"
 text = "Continue!"
