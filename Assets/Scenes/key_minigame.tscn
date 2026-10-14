@@ -1,0 +1,220 @@
+[gd_scene load_steps=18 format=3 uid="uid://dqccn0ux1n86c"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_l6oqh"]
+[ext_resource type="Texture2D" uid="uid://b4wt8pjrk4vou" path="res://Assets/Textures/Sprites/Ignition(a).png" id="2_bb5y5"]
+[ext_resource type="Texture2D" uid="uid://7sxr8ja77wce" path="res://Assets/Textures/Sprites/CarKey.png" id="2_sc826"]
+[ext_resource type="Script" path="res://Assets/Scripts/center_mass.gd" id="3_u6a4y"]
+[ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/Weird_Label_Theme.tres" id="5_agh0q"]
+[ext_resource type="Script" path="res://Assets/Scripts/Ignition_Area.gd" id="6_g8s3k"]
+[ext_resource type="Script" path="res://Assets/Scripts/kill_box.gd" id="6_r4cv6"]
+[ext_resource type="Texture2D" uid="uid://bj7jaupju8omh" path="res://Assets/Textures/Sprites/Ignition(b).png" id="6_swk7q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5uaf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6eaa2"]
+radius = 13.8924
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ri7dp"]
+size = Vector2(14, 16)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_458r8"]
+size = Vector2(14, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crbat"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tcnev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqk46"]
+size = Vector2(849, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ycjw"]
+size = Vector2(598, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yguss"]
+size = Vector2(592, 55.0003)
+
+[node name="GasMinigame" type="Node2D"]
+texture_filter = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.415, 1.415)
+
+[node name="PivotPoint" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotPoint"]
+shape = SubResource("CircleShape2D_q5uaf")
+disabled = true
+
+[node name="IgnB" type="Sprite2D" parent="."]
+position = Vector2(-245, 5)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("6_swk7q")
+
+[node name="Key" type="RigidBody2D" parent="."]
+position = Vector2(0, 72)
+mass = 0.001
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 100)
+can_sleep = false
+script = ExtResource("1_l6oqh")
+maxForce = 1000.0
+maxDistance = 100.0
+maxlinearDamp = 250.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Key"]
+position = Vector2(-2.50001, 77.3)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("2_sc826")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Key"]
+position = Vector2(88.5, 79.3)
+polygon = PackedVector2Array(-116, 63, -61, 63, -51, 53, -51, 14, -61, 3, -76, 3, -76, -72, -81, -78, -101, -78, -101, 3, -116, 3, -126, 13, -126, 52)
+
+[node name="TextureButton" type="TextureButton" parent="Key"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = 1.3
+offset_right = 107.5
+offset_bottom = 257.3
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5307, 0.5707)
+
+[node name="Area2D" type="Area2D" parent="Key"]
+position = Vector2(-0.5, -0.699997)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key/Area2D"]
+shape = SubResource("CircleShape2D_6eaa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Key/Area2D"]
+visible = false
+modulate = Color(0.000410652, 0.178394, 0.630137, 1)
+texture = SubResource("PlaceholderTexture2D_ri7dp")
+
+[node name="CenterMass" type="Sprite2D" parent="Key"]
+visible = false
+texture = SubResource("PlaceholderTexture2D_458r8")
+script = ExtResource("3_u6a4y")
+
+[node name="TurnButton" type="Button" parent="Key"]
+offset_left = 12.0
+offset_top = 90.0
+offset_right = 97.0
+offset_bottom = 114.0
+rotation = 1.57079
+theme = ExtResource("5_agh0q")
+theme_type_variation = &"ItemButton"
+
+[node name="Label" type="Label" parent="Key/TurnButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("5_agh0q")
+theme_type_variation = &"ItemLabel"
+text = "Turn"
+
+[node name="IgnA" type="Sprite2D" parent="."]
+position = Vector2(-245, 5)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("2_bb5y5")
+
+[node name="IgnitionCollision" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="IgnitionCollision"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="IgnitionCollision/StaticBody2D"]
+polygon = PackedVector2Array(-410, 28, -341, 19, -291, 14, -284, 6, -250, 4, -235, -11, -235, -32, -270, -65, -352, -65, -352, -100, -269, -101, -230, -131, -230, -163, -245, -181, -311, -180, -322, -198, -325, -231, -408, -232)
+
+[node name="Ignition" type="Area2D" parent="." node_paths=PackedStringArray("turnButton")]
+position = Vector2(-341, -82)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_g8s3k")
+turnButton = NodePath("../Key/TurnButton")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Ignition"]
+node_a = NodePath("../StaticBody2D2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Ignition"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ignition"]
+shape = SubResource("RectangleShape2D_crbat")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ignition"]
+visible = false
+modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+position = Vector2(3.57628e-07, -1.90735e-06)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_tcnev")
+
+[node name="SocketWatcher" type="Node2D" parent="."]
+
+[node name="Bounds" type="Node2D" parent="."]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Bounds"]
+position = Vector2(-2, -243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D2"]
+position = Vector2(0, -56)
+shape = SubResource("RectangleShape2D_sqk46")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bounds"]
+position = Vector2(0, 238)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D"]
+position = Vector2(1, 19)
+shape = SubResource("RectangleShape2D_sqk46")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Bounds"]
+position = Vector2(414, 0)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D3"]
+position = Vector2(32.0001, 16.9999)
+shape = SubResource("RectangleShape2D_5ycjw")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Bounds"]
+position = Vector2(-417, 0)
+rotation = -1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D4"]
+position = Vector2(26.9999, -17.5002)
+shape = SubResource("RectangleShape2D_yguss")
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 115.0
+offset_top = -31.0
+offset_right = 325.0
+offset_bottom = 7.0
+theme = ExtResource("5_agh0q")
+theme_type_variation = &"GoalButton"
+
+[node name="Label" type="Label" parent="ContinueButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -14.5
+offset_right = 88.5
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_agh0q")
+theme_type_variation = &"GoalLabel"
+text = "Continue!"
+
+[node name="KillBox" type="Area2D" parent="."]
+script = ExtResource("6_r4cv6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillBox"]
+polygon = PackedVector2Array(-478, -316, -490, 319, 554, 325, 555, -342, -503, -330, -507, -474, 705, -479, 699, 509, -674, 486, -664, -482, -520, -482, -517, -316)

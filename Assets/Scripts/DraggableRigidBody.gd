@@ -24,6 +24,7 @@ func _ready() -> void:
 	lineIndicator = Line2D.new()
 	self.add_child(lineIndicator)
 	lineIndicator.width = 5
+	lineIndicator.z_index = 10
 	#print("default linear damp: " + str(defaultLinearDamp))
 
 func OnButtonDown():
