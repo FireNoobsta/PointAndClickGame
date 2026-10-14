@@ -45,11 +45,6 @@ zoom = Vector2(1.415, 1.415)
 shape = SubResource("CircleShape2D_q5uaf")
 disabled = true
 
-[node name="IgnB" type="Sprite2D" parent="."]
-position = Vector2(-245, 5)
-scale = Vector2(5.03125, 5.03125)
-texture = ExtResource("6_swk7q")
-
 [node name="Key" type="RigidBody2D" parent="."]
 position = Vector2(0, 72)
 mass = 0.001
@@ -119,11 +114,6 @@ theme = ExtResource("5_agh0q")
 theme_type_variation = &"ItemLabel"
 text = "Turn"
 
-[node name="IgnA" type="Sprite2D" parent="."]
-position = Vector2(-245, 5)
-scale = Vector2(5.03125, 5.03125)
-texture = ExtResource("2_bb5y5")
-
 [node name="IgnitionCollision" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="IgnitionCollision"]
@@ -152,6 +142,17 @@ modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
 position = Vector2(3.57628e-07, -1.90735e-06)
 scale = Vector2(20, 20)
 texture = SubResource("PlaceholderTexture2D_tcnev")
+
+[node name="IgnB" type="Sprite2D" parent="Ignition"]
+z_index = -1
+position = Vector2(96, 87)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("6_swk7q")
+
+[node name="IgnA" type="Sprite2D" parent="Ignition"]
+position = Vector2(96, 87)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("2_bb5y5")
 
 [node name="SocketWatcher" type="Node2D" parent="."]
 
