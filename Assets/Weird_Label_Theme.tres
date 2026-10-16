@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bid2b0spuuf0k"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bid2b0spuuf0k"]
 
 [ext_resource type="FontFile" uid="uid://bi8d5xia8l585" path="res://Assets/Fonts/PixelOperator8.ttf" id="1_pgtdh"]
 
@@ -46,6 +46,19 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0.804661, 0.230217, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gus3p"]
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lh02e"]
+bg_color = Color(0.739823, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjgnn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 5
@@ -77,6 +90,8 @@ NavigationButton/styles/hover = SubResource("StyleBoxFlat_j7pie")
 NavigationLabel/base_type = &"Label"
 NavigationLabel/colors/font_color = Color(0, 0.803922, 0.231373, 1)
 NavigationLabel/font_sizes/font_size = 16
+ProgressBar/styles/background = SubResource("StyleBoxFlat_gus3p")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_lh02e")
 PuzzButton/base_type = &"Button"
 PuzzButton/styles/hover = SubResource("StyleBoxFlat_rjgnn")
 PuzzLabel/base_type = &"Label"

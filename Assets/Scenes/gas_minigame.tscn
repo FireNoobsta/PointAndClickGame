@@ -1,13 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://bfg3u4langd7m"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_3v1c8"]
+[ext_resource type="Texture2D" uid="uid://vvcbyos2u3xy" path="res://Assets/Textures/Sprites/CarSideView.png" id="1_lvn0c"]
 [ext_resource type="Texture2D" uid="uid://bmm2s21smxic2" path="res://Assets/Textures/Sprites/GasCan.png" id="2_5ijhl"]
 [ext_resource type="Script" path="res://Assets/Scripts/center_mass.gd" id="3_jse8g"]
 [ext_resource type="Script" path="res://Assets/Scripts/Gas_Tank_Area.gd" id="4_dne33"]
 [ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/Weird_Label_Theme.tres" id="4_yjtxp"]
 [ext_resource type="Script" path="res://Assets/Scripts/kill_box.gd" id="5_4o0gc"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_q5uaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6eaa2"]
 radius = 13.8924
@@ -37,11 +36,15 @@ texture_filter = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.415, 1.415)
 
-[node name="PivotPoint" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PivotPoint"]
-shape = SubResource("CircleShape2D_q5uaf")
-disabled = true
+[node name="CarSideView" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-336, -46)
+scale = Vector2(5.03125, 5.03125)
+texture = ExtResource("1_lvn0c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-352, 228, -331, 197, -330, 63, -345, 42, -321, 43, -320, -59, -337, -69, -337, -86, -321, -92, -320, -232, -365, -306, -412, -304, -408, 40, -376, 42, -393, 63, -393, 198, -372, 229)
 
 [node name="GasCan" type="RigidBody2D" parent="."]
 position = Vector2(0, 72)
@@ -85,6 +88,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_6eaa2")
 
 [node name="Sprite2D" type="Sprite2D" parent="GasCan/Area2D"]
+visible = false
 modulate = Color(0.000410652, 0.178394, 0.630137, 1)
 texture = SubResource("PlaceholderTexture2D_ri7dp")
 
@@ -95,11 +99,12 @@ script = ExtResource("3_jse8g")
 
 [node name="SocketWatcher" type="Node2D" parent="."]
 
-[node name="TankHole" type="Area2D" parent="."]
-position = Vector2(-333, -111)
+[node name="TankHole" type="Area2D" parent="." node_paths=PackedStringArray("fuelGauge")]
+position = Vector2(-327, -75)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("4_dne33")
+fuelGauge = NodePath("../FuelGauge/ProgressBar")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="TankHole"]
 node_a = NodePath("../StaticBody2D2")
@@ -110,6 +115,7 @@ node_a = NodePath("../StaticBody2D2")
 shape = SubResource("RectangleShape2D_crbat")
 
 [node name="Sprite2D" type="Sprite2D" parent="TankHole"]
+visible = false
 modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
 position = Vector2(3.57628e-07, -1.90735e-06)
 scale = Vector2(20, 20)
@@ -172,6 +178,35 @@ grow_vertical = 2
 theme = ExtResource("4_yjtxp")
 theme_type_variation = &"GoalLabel"
 text = "Continue!"
+
+[node name="FuelGauge" type="Node2D" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="FuelGauge"]
+offset_left = -376.0
+offset_top = -2.0
+offset_right = -178.0
+offset_bottom = 25.0
+rotation = -1.57079
+theme = ExtResource("4_yjtxp")
+show_percentage = false
+
+[node name="Label" type="Label" parent="FuelGauge"]
+offset_left = -372.0
+offset_right = -351.0
+offset_bottom = 24.0
+theme = ExtResource("4_yjtxp")
+theme_override_colors/font_color = Color(0.87451, 0, 0, 1)
+text = "E"
+
+[node name="Label2" type="Label" parent="FuelGauge"]
+offset_left = -371.0
+offset_top = -226.0
+offset_right = -350.0
+offset_bottom = -202.0
+theme = ExtResource("4_yjtxp")
+theme_override_colors/font_color = Color(0.87451, 0, 0, 1)
+text = "F
+"
 
 [node name="KillBox" type="Area2D" parent="."]
 script = ExtResource("5_4o0gc")
