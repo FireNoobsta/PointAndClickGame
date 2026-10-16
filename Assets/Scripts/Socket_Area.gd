@@ -2,6 +2,7 @@ extends Area2D
 class_name SocketArea
 
 @onready var joint : PinJoint2D = $PinJoint2D
+@onready var lugnut : Sprite2D = $Lug
 
 var turnAmount : float = 0.0
 var isTight : bool = false
@@ -18,6 +19,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if isWrenchAttached:
 		turnAmount += clampf(wrench.angular_velocity * delta, 0.0, wrench.angular_velocity * delta)
+		lugnut.rotation = turnAmount
 		#print(turnAmount)
 		#Socket tightens after 3 rotations
 		if (turnAmount >= PI * 6):

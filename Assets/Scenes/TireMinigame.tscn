@@ -1,18 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://cicw4h1s1r0e7"]
+[gd_scene load_steps=17 format=3 uid="uid://cicw4h1s1r0e7"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_hx5y1"]
 [ext_resource type="Script" path="res://Assets/Scripts/Socket_Area.gd" id="2_g400n"]
 [ext_resource type="Script" path="res://Assets/Scripts/socket_watcher.gd" id="2_gci8u"]
+[ext_resource type="Texture2D" uid="uid://dx024k2bn50ss" path="res://Assets/Textures/Sprites/Wrench.png" id="2_l8sv8"]
 [ext_resource type="Script" path="res://Assets/Scripts/kill_box.gd" id="3_iegqy"]
+[ext_resource type="Script" path="res://Assets/Scripts/center_mass.gd" id="3_o8hlh"]
 [ext_resource type="Theme" uid="uid://bid2b0spuuf0k" path="res://Assets/Weird_Label_Theme.tres" id="4_r6a5b"]
+[ext_resource type="Texture2D" uid="uid://bf5op2gqludtk" path="res://Assets/Textures/Sprites/LugNut.png" id="6_o2m2f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q5uaf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcftq"]
-size = Vector2(400, 50)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_eny3w"]
-size = Vector2(400, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6eaa2"]
 radius = 13.8924
@@ -20,9 +17,10 @@ radius = 13.8924
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ri7dp"]
 size = Vector2(14, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejycu"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ehj7m"]
+size = Vector2(14, 13)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_antjg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejycu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqk46"]
 size = Vector2(849, 55)
@@ -34,6 +32,7 @@ size = Vector2(598, 50)
 size = Vector2(592, 55.0003)
 
 [node name="TireMiniGame" type="Node2D"]
+texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.415, 1.415)
@@ -47,21 +46,21 @@ disabled = true
 [node name="Wrench" type="RigidBody2D" parent="."]
 position = Vector2(0, 72)
 mass = 0.001
+center_of_mass_mode = 1
+center_of_mass = Vector2(-75.65, 0)
 can_sleep = false
 script = ExtResource("1_hx5y1")
 maxForce = 1000.0
 maxDistance = 100.0
 maxlinearDamp = 250.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wrench"]
-position = Vector2(-92, 0)
-scale = Vector2(0.537315, 0.537315)
-shape = SubResource("RectangleShape2D_jcftq")
-
 [node name="Sprite2D" type="Sprite2D" parent="Wrench"]
-position = Vector2(-92, 0)
-scale = Vector2(0.543554, 0.543554)
-texture = SubResource("PlaceholderTexture2D_eny3w")
+position = Vector2(-100.375, 0.499996)
+scale = Vector2(3.39286, 3.39286)
+texture = ExtResource("2_l8sv8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wrench"]
+polygon = PackedVector2Array(-200, 14, -48, 13, -37, 21, -17, 30, 3, 30, 19, 17, 19, 4, -2, 10, -12, -2, 0, -10, 14, -13, 13, -21, -21, -29, -28, -30, -54, -12, -200, -13, -205, -11, -204, 10)
 
 [node name="TextureButton" type="TextureButton" parent="Wrench"]
 anchors_preset = 8
@@ -86,8 +85,14 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_6eaa2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Wrench/Area2D"]
+visible = false
 modulate = Color(0.000410652, 0.178394, 0.630137, 1)
 texture = SubResource("PlaceholderTexture2D_ri7dp")
+
+[node name="CenterMass" type="Sprite2D" parent="Wrench"]
+visible = false
+texture = SubResource("PlaceholderTexture2D_ehj7m")
+script = ExtResource("3_o8hlh")
 
 [node name="SocketWatcher" type="Node2D" parent="." node_paths=PackedStringArray("sockets", "continueButton")]
 script = ExtResource("2_gci8u")
@@ -108,11 +113,10 @@ node_a = NodePath("../StaticBody2D2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Socket1"]
 shape = SubResource("RectangleShape2D_ejycu")
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket1"]
-modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+[node name="Lug" type="Sprite2D" parent="Socket1"]
 position = Vector2(3.57628e-07, -1.90735e-06)
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_antjg")
+scale = Vector2(3.39286, 3.39286)
+texture = ExtResource("6_o2m2f")
 
 [node name="Socket2" type="Area2D" parent="."]
 position = Vector2(-35, -55)
@@ -128,11 +132,10 @@ node_a = NodePath("../StaticBody2D2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Socket2"]
 shape = SubResource("RectangleShape2D_ejycu")
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket2"]
-modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+[node name="Lug" type="Sprite2D" parent="Socket2"]
 position = Vector2(3.57628e-07, -1.90735e-06)
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_antjg")
+scale = Vector2(3.39286, 3.39286)
+texture = ExtResource("6_o2m2f")
 
 [node name="Socket3" type="Area2D" parent="."]
 position = Vector2(36, -55)
@@ -148,11 +151,10 @@ node_a = NodePath("../StaticBody2D2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Socket3"]
 shape = SubResource("RectangleShape2D_ejycu")
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket3"]
-modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+[node name="Lug" type="Sprite2D" parent="Socket3"]
 position = Vector2(3.57628e-07, -1.90735e-06)
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_antjg")
+scale = Vector2(3.39286, 3.39286)
+texture = ExtResource("6_o2m2f")
 
 [node name="Socket4" type="Area2D" parent="."]
 position = Vector2(37, 9)
@@ -168,11 +170,10 @@ node_a = NodePath("../StaticBody2D2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Socket4"]
 shape = SubResource("RectangleShape2D_ejycu")
 
-[node name="Sprite2D" type="Sprite2D" parent="Socket4"]
-modulate = Color(1.01075e-06, 0.478784, 0.474686, 1)
+[node name="Lug" type="Sprite2D" parent="Socket4"]
 position = Vector2(3.57628e-07, -1.90735e-06)
-scale = Vector2(20, 20)
-texture = SubResource("PlaceholderTexture2D_antjg")
+scale = Vector2(3.39286, 3.39286)
+texture = ExtResource("6_o2m2f")
 
 [node name="Bounds" type="Node2D" parent="."]
 
