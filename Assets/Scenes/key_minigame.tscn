@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqccn0ux1n86c"]
+[gd_scene load_steps=19 format=3 uid="uid://dqccn0ux1n86c"]
 
+[ext_resource type="Texture2D" uid="uid://biar73m6yled3" path="res://Assets/Textures/BackgroundPhotos/IgnitionBG.png" id="1_j6a5u"]
 [ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_l6oqh"]
 [ext_resource type="Texture2D" uid="uid://b4wt8pjrk4vou" path="res://Assets/Textures/Sprites/Ignition(a).png" id="2_bb5y5"]
 [ext_resource type="Texture2D" uid="uid://7sxr8ja77wce" path="res://Assets/Textures/Sprites/CarKey.png" id="2_sc826"]
@@ -38,6 +39,12 @@ texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.415, 1.415)
+
+[node name="IgnitionBg" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-50, 59)
+scale = Vector2(4.99882, 4.99882)
+texture = ExtResource("1_j6a5u")
 
 [node name="PivotPoint" type="StaticBody2D" parent="."]
 
@@ -121,12 +128,13 @@ text = "Turn"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="IgnitionCollision/StaticBody2D"]
 polygon = PackedVector2Array(-410, 28, -341, 19, -291, 14, -284, 6, -250, 4, -235, -11, -235, -32, -270, -65, -352, -65, -352, -100, -269, -101, -230, -131, -230, -163, -245, -181, -311, -180, -322, -198, -325, -231, -408, -232)
 
-[node name="Ignition" type="Area2D" parent="." node_paths=PackedStringArray("turnButton")]
+[node name="Ignition" type="Area2D" parent="." node_paths=PackedStringArray("turnButton", "contButton")]
 position = Vector2(-341, -82)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("6_g8s3k")
 turnButton = NodePath("../Key/TurnButton")
+contButton = NodePath("../ContinueButton")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Ignition"]
 node_a = NodePath("../StaticBody2D2")

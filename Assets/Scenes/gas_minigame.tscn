@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfg3u4langd7m"]
+[gd_scene load_steps=17 format=3 uid="uid://bfg3u4langd7m"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_3v1c8"]
+[ext_resource type="Texture2D" uid="uid://smodft50fold" path="res://Assets/Textures/BackgroundPhotos/CarSideViewBackground.png" id="1_bmdu8"]
 [ext_resource type="Texture2D" uid="uid://vvcbyos2u3xy" path="res://Assets/Textures/Sprites/CarSideView.png" id="1_lvn0c"]
 [ext_resource type="Texture2D" uid="uid://bmm2s21smxic2" path="res://Assets/Textures/Sprites/GasCan.png" id="2_5ijhl"]
 [ext_resource type="Script" path="res://Assets/Scripts/center_mass.gd" id="3_jse8g"]
@@ -35,6 +36,11 @@ texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.415, 1.415)
+
+[node name="CarSideViewBackground" type="Sprite2D" parent="."]
+position = Vector2(-457, 265)
+scale = Vector2(8.86816, 8.86816)
+texture = ExtResource("1_bmdu8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -99,12 +105,13 @@ script = ExtResource("3_jse8g")
 
 [node name="SocketWatcher" type="Node2D" parent="."]
 
-[node name="TankHole" type="Area2D" parent="." node_paths=PackedStringArray("fuelGauge")]
+[node name="TankHole" type="Area2D" parent="." node_paths=PackedStringArray("fuelGauge", "contButton")]
 position = Vector2(-327, -75)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("4_dne33")
 fuelGauge = NodePath("../FuelGauge/ProgressBar")
+contButton = NodePath("../ContinueButton")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="TankHole"]
 node_a = NodePath("../StaticBody2D2")

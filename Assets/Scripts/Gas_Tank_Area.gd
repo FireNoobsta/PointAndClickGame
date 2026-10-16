@@ -3,6 +3,7 @@ class_name GasTankArea
 
 @onready var joint : PinJoint2D = $PinJoint2D
 @export var fuelGauge : ProgressBar
+@export var contButton : BaseButton
 
 var fillAmount : float = 0.0
 var fillSpeed : float = 15.0
@@ -17,6 +18,11 @@ func _ready() -> void:
 		push_error("Fuel Gauge for " + self.name + " not set!")
 	else:
 		fuelGauge.value = fillAmount
+	
+	if contButton == null:
+		push_error("Continue Button for " + self.name + " not set!")
+	else:
+		contButton.hide()
 	self.area_entered.connect(_on_gas_can_enter_area)
 	self.area_exited.connect(_on_gas_can_exited_area)
 
@@ -28,6 +34,7 @@ func _process(delta: float) -> void:
 		fuelGauge.value = fillAmount
 		if fillAmount >= 100.0:
 			print("Gas Filled up!")
+			contButton.show()
 			isFull = true
 			gotFilled.emit()
 			self.set_deferred("monitoring", false)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cicw4h1s1r0e7"]
+[gd_scene load_steps=19 format=3 uid="uid://cicw4h1s1r0e7"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/DraggableRigidBody.gd" id="1_hx5y1"]
+[ext_resource type="Texture2D" uid="uid://ddusrcnsgik85" path="res://Assets/Textures/Sprites/tire.png" id="1_xa6er"]
 [ext_resource type="Script" path="res://Assets/Scripts/Socket_Area.gd" id="2_g400n"]
 [ext_resource type="Script" path="res://Assets/Scripts/socket_watcher.gd" id="2_gci8u"]
 [ext_resource type="Texture2D" uid="uid://dx024k2bn50ss" path="res://Assets/Textures/Sprites/Wrench.png" id="2_l8sv8"]
@@ -22,6 +23,9 @@ size = Vector2(14, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejycu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlsir"]
+size = Vector2(849, 20.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqk46"]
 size = Vector2(849, 55)
 
@@ -37,6 +41,18 @@ texture_filter = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.415, 1.415)
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -468.0
+offset_top = -325.0
+offset_right = 472.0
+offset_bottom = 254.0
+color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[node name="Tire" type="Sprite2D" parent="."]
+position = Vector2(-7, -66)
+scale = Vector2(5.27083, 5.27083)
+texture = ExtResource("1_xa6er")
+
 [node name="PivotPoint" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PivotPoint"]
@@ -44,6 +60,7 @@ shape = SubResource("CircleShape2D_q5uaf")
 disabled = true
 
 [node name="Wrench" type="RigidBody2D" parent="."]
+z_index = 1
 position = Vector2(0, 72)
 mass = 0.001
 center_of_mass_mode = 1
@@ -96,11 +113,11 @@ script = ExtResource("3_o8hlh")
 
 [node name="SocketWatcher" type="Node2D" parent="." node_paths=PackedStringArray("sockets", "continueButton")]
 script = ExtResource("2_gci8u")
-sockets = [NodePath("../Socket1"), NodePath("../Socket2"), NodePath("../Socket3"), NodePath("../Socket4")]
+sockets = [NodePath("../Socket1"), NodePath("../Socket2"), NodePath("../Socket3"), NodePath("../Socket4"), NodePath("../Socket5")]
 continueButton = NodePath("../ContinueButton")
 
 [node name="Socket1" type="Area2D" parent="."]
-position = Vector2(-35, 9)
+position = Vector2(-56, -18)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_g400n")
@@ -119,7 +136,7 @@ scale = Vector2(3.39286, 3.39286)
 texture = ExtResource("6_o2m2f")
 
 [node name="Socket2" type="Area2D" parent="."]
-position = Vector2(-35, -55)
+position = Vector2(-23, -68)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_g400n")
@@ -175,14 +192,33 @@ position = Vector2(3.57628e-07, -1.90735e-06)
 scale = Vector2(3.39286, 3.39286)
 texture = ExtResource("6_o2m2f")
 
+[node name="Socket5" type="Area2D" parent="."]
+position = Vector2(-16, 24)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_g400n")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Socket5"]
+node_a = NodePath("../StaticBody2D2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Socket5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Socket5"]
+shape = SubResource("RectangleShape2D_ejycu")
+
+[node name="Lug" type="Sprite2D" parent="Socket5"]
+position = Vector2(3.57628e-07, -1.90735e-06)
+scale = Vector2(3.39286, 3.39286)
+texture = ExtResource("6_o2m2f")
+
 [node name="Bounds" type="Node2D" parent="."]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Bounds"]
 position = Vector2(-2, -243)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/StaticBody2D2"]
-position = Vector2(0, -56)
-shape = SubResource("RectangleShape2D_sqk46")
+position = Vector2(0, -73.25)
+shape = SubResource("RectangleShape2D_xlsir")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Bounds"]
 position = Vector2(0, 238)

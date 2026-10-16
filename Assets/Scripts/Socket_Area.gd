@@ -28,10 +28,12 @@ func _process(delta: float) -> void:
 			joint.node_b = ""
 			isTight = true
 			gotTightened.emit()
+			lugnut.z_index = 0
 
 func _on_wrench_enter_socket(area: Area2D):
 	pass
 	print("On Enter Triggered on: " + str(area))
+	lugnut.z_index = 2
 	wrench = area.get_parent() as RigidBody2D
 	wrench.translate(self.global_position - wrench.global_position)
 	#wrench.transform.origin = self.transform.origin

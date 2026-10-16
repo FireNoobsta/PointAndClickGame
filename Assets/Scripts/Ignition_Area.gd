@@ -3,6 +3,7 @@ class_name IgnitionArea
 
 @onready var joint : PinJoint2D = $PinJoint2D
 @export var turnButton : BaseButton
+@export var contButton : BaseButton
 
 var turnDuration : float = 0.0
 #var isTight : bool = false
@@ -39,17 +40,23 @@ func _process(delta: float) -> void:
 			if numAttempts >= 3:
 				print("Engine started!")
 				engineStarted = true
+				contButton.show()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.area_entered.connect(_on_key_enter)
 	selfNormalposition = self.transform.origin
 	if turnButton == null:
-		push_error("TurnButton is not set!")
+		push_error("TurnButton for "+ self.name + " not set!")
 	else:
 		turnButton.hide()
 		turnButton.button_down.connect(_on_turn_button_down)
 		turnButton.button_up.connect(_on_turn_button_up)
+	
+	if contButton == null:
+		push_error("ContButton for " + str(self.name) + " not set!")
+	else:
+		contButton.hide()
 
 
 func _on_turn_button_down():
