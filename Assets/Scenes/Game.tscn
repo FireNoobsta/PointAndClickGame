@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tjtgf8ple4xl"]
+[gd_scene load_steps=23 format=3 uid="uid://tjtgf8ple4xl"]
 
 [ext_resource type="PackedScene" uid="uid://cehti08jgy5j5" path="res://Assets/Scenes/Screens/Cell_1.3.tscn" id="2_sbpq0"]
 [ext_resource type="PackedScene" uid="uid://cg0h4egdw076t" path="res://Assets/Scenes/Screens/Cell_-1.1.tscn" id="5_cuak0"]
@@ -11,10 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://bc2i1qfv1wqyt" path="res://Assets/Scenes/Screens/Cell_0.0.tscn" id="13_ka1bd"]
 [ext_resource type="PackedScene" uid="uid://7xnj6rddjka0" path="res://Assets/Scenes/Screens/Cell_1.0.tscn" id="14_kg4vh"]
 [ext_resource type="PackedScene" uid="uid://by0b0eltxx3vu" path="res://Assets/Scenes/FlashLightOccluder.tscn" id="17_4t7oy"]
+[ext_resource type="PackedScene" uid="uid://cicw4h1s1r0e7" path="res://Assets/Scenes/TireMinigame.tscn" id="17_i6r7y"]
 [ext_resource type="PackedScene" uid="uid://chjcqgfrr65om" path="res://Assets/Scenes/CutsceneDialogue.tscn" id="18_2sk01"]
+[ext_resource type="Script" path="res://Assets/Scripts/moveTileButton.gd" id="18_lg1g1"]
+[ext_resource type="PackedScene" uid="uid://bfg3u4langd7m" path="res://Assets/Scenes/gas_minigame.tscn" id="19_nwfrk"]
 [ext_resource type="Script" path="res://Assets/Scripts/trigger_flashlight.gd" id="19_t0575"]
 [ext_resource type="Script" path="res://Assets/Scripts/audio_manager.gd" id="20_1e1u5"]
+[ext_resource type="PackedScene" uid="uid://dqccn0ux1n86c" path="res://Assets/Scenes/key_minigame.tscn" id="20_x2epd"]
+[ext_resource type="Script" path="res://Assets/Scripts/scene_transition_button.gd" id="21_nrkym"]
 [ext_resource type="AudioStream" uid="uid://bthirfbx2dpts" path="res://Assets/Sound/Music/song 1 Piano.wav" id="21_v31g2"]
+[ext_resource type="PackedScene" uid="uid://rsv0h0ylklhn" path="res://Assets/Scenes/EndScreen.tscn" id="22_eeqna"]
 [ext_resource type="Script" path="res://Assets/Scripts/audio_events.gd" id="22_o01a2"]
 
 [node name="Game" type="Node2D"]
@@ -99,8 +105,10 @@ DestinationCamera = NodePath("../../../EastPath/Camera2D")
 [node name="DownButton" parent="Screens/CarScreen/The Buttons" index="3" node_paths=PackedStringArray("DestinationCamera")]
 DestinationCamera = NodePath("../../../GateScreen/Camera2D")
 
-[node name="CarObject" parent="Screens/CarScreen" index="3" node_paths=PackedStringArray("audioManager")]
+[node name="CarObject" parent="Screens/CarScreen" index="3" node_paths=PackedStringArray("audioManager", "minigameCamera", "flashlightTrigger")]
 audioManager = NodePath("../../../AudioManager")
+minigameCamera = NodePath("../../../TireMiniGame/Camera2D")
+flashlightTrigger = NodePath("../../../TriggerFlashlight")
 
 [node name="PlayerInventory" parent="Screens/CarScreen" index="4"]
 itemButtonEntries = {
@@ -226,6 +234,28 @@ events = Array[Dictionary]([{
 "trigger": NodePath("../../Screens/CarScreen/CarObject/Interactable/TextureButton")
 }])
 
+[node name="TireMiniGame" parent="." instance=ExtResource("17_i6r7y")]
+position = Vector2(1266, 4944)
+
+[node name="ContinueButton" parent="TireMiniGame" index="12" node_paths=PackedStringArray("DestinationCamera")]
+script = ExtResource("18_lg1g1")
+DestinationCamera = NodePath("../../GasMinigame/Camera2D")
+
+[node name="GasMinigame" parent="." instance=ExtResource("19_nwfrk")]
+position = Vector2(3618, 4793)
+
+[node name="ContinueButton" parent="GasMinigame" index="7" node_paths=PackedStringArray("DestinationCamera")]
+script = ExtResource("18_lg1g1")
+DestinationCamera = NodePath("../../KeyMinigame/Camera2D")
+
+[node name="KeyMinigame" parent="." instance=ExtResource("20_x2epd")]
+position = Vector2(5359, 4846)
+
+[node name="ContinueButton" parent="KeyMinigame" index="8" node_paths=PackedStringArray("audioManager")]
+script = ExtResource("21_nrkym")
+newScene = ExtResource("22_eeqna")
+audioManager = NodePath("../../AudioManager")
+
 [editable path="Screens/StartScreen"]
 [editable path="Screens/StartScreen/The Buttons"]
 [editable path="Screens/StartScreen/The Buttons/LeftButton"]
@@ -296,3 +326,6 @@ events = Array[Dictionary]([{
 [editable path="Screens/GateScreen/BaseMiniGame"]
 [editable path="Screens/GateScreen/InfoButton"]
 [editable path="Screens/GateScreen/MinigameButton"]
+[editable path="TireMiniGame"]
+[editable path="GasMinigame"]
+[editable path="KeyMinigame"]

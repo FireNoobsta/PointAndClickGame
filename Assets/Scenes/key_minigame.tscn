@@ -34,7 +34,7 @@ size = Vector2(598, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yguss"]
 size = Vector2(592, 55.0003)
 
-[node name="GasMinigame" type="Node2D"]
+[node name="KeyMinigame" type="Node2D"]
 texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -4,6 +4,7 @@ extends Node2D
 @export var startOnReady := false
 @export var triggerButton : BaseButton
 @export var fireOnce := true
+@export var itemsToRevealOnClose : Array[CanvasItem]
 
 const DIABOX := preload("res://Assets/Scenes/DialogueBox.tscn")
 var spawnedBox
@@ -16,11 +17,17 @@ func _ready() -> void:
 		triggerButton.pressed.connect(SpawnBox)
 	else:
 		print("WARNING: Cutscene Dialogue " + str(self) + " has no trigger and will never start")
+	
+
+func RevealItems():
+	for item in itemsToRevealOnClose:
+		item.show()
 
 func SpawnBox():
 	spawnedBox = DIABOX.instantiate()
 	add_child(spawnedBox)
 	spawnedBox.SetDialogue(DialogueText)
 	spawnedBox.StartDialogue()
+	spawnedBox.dialogue_closed.connect(RevealItems)
 	if fireOnce:
 		spawnedBox.dialogue_closed.connect(queue_free)

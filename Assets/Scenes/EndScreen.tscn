@@ -16,6 +16,7 @@ offset_bottom = 321.0
 color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 texture_filter = 1
 offset_left = -575.0
 offset_top = -322.0
@@ -51,8 +52,9 @@ offset_right = 590.0
 offset_bottom = 371.0
 text = "Creators"
 
-[node name="CutsceneDialogue" parent="." instance=ExtResource("1_7wq41")]
-DialogueText = Array[String](["Woah there! I'm sorry but you're gonna have to stop there!", "You haven't come up with what happens next yet", "Wake up for now. Maybe after a while you'll have the next part done!"])
+[node name="CutsceneDialogue" parent="." node_paths=PackedStringArray("itemsToRevealOnClose") instance=ExtResource("1_7wq41")]
+DialogueText = Array[String](["You successfully started the car and drove away", "You don't quite remember what happened afterwards, but the night is over now", "Won't you come again?"])
 startOnReady = true
+itemsToRevealOnClose = [NodePath("../RichTextLabel")]
 
 [editable path="InfoButton"]
